@@ -4,20 +4,15 @@ import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
-import androidx.compose.material.icons.filled.ReportGmailerrorred
 import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material.icons.outlined.Email
-import androidx.compose.material.icons.outlined.ThumbUp
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -27,7 +22,12 @@ import com.example.teayudaapp.R
 
 
 @Composable
-fun RegisterScreen(){
+fun RegisterScreen(
+    modifier: Modifier = Modifier,
+){
+    var emailText = remember { mutableStateOf("email@email.com") }
+    var passwordText = remember { mutableStateOf("password") }
+
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -36,6 +36,7 @@ fun RegisterScreen(){
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
         item {
             TittleView()
         }
@@ -45,12 +46,12 @@ fun RegisterScreen(){
         }
 
         item {
-            EmailField()
+            EmailField(emailText)
             Spacer(modifier = Modifier.height(21.67.dp))
         }
 
         item {
-            PasswordField()
+            PasswordField(passwordText)
             Spacer(modifier = Modifier.height(21.67.dp))
         }
 
@@ -127,7 +128,6 @@ private fun ContinueButton() {
             backgroundColor = Color(0xFFE5E0FF)
         )
     ) {
-
         Text(
             text = "Continuar",
             style = MaterialTheme.typography.body1,
@@ -145,7 +145,7 @@ private fun AgreeRadioButton() {
             selected = false,
             onClick = { },
             modifier = Modifier
-                .size(14.dp)
+                .size(24.dp)
         )
 
         Text(
@@ -157,7 +157,9 @@ private fun AgreeRadioButton() {
 }
 
 @Composable
-private fun PasswordField() {
+private fun PasswordField(
+    passwordText: MutableState<String>
+) {
     Box(
         modifier = Modifier.fillMaxWidth(),
         contentAlignment = Alignment.Center
@@ -174,8 +176,8 @@ private fun PasswordField() {
             )
             TextField(
                 modifier = Modifier.fillMaxWidth(),
-                value = "password",
-                onValueChange = { /*TODO: Password text field */ },
+                value = passwordText.value,
+                onValueChange = { passwordText.value = it },
                 shape = MaterialTheme.shapes.large,
                 leadingIcon = {
                     Icon(
@@ -186,7 +188,7 @@ private fun PasswordField() {
                 trailingIcon = {
                     IconButton(onClick = { /*TODO: Visibility*/ }) {
                         Icon(
-                            imageVector = Icons.Filled.Visibility,
+                            imageVector = Icons.Filled.VisibilityOff,
                             contentDescription = "Password visibility"
                         )
                     }
@@ -202,7 +204,9 @@ private fun PasswordField() {
 }
 
 @Composable
-private fun EmailField() {
+private fun EmailField(
+    emailText: MutableState<String>,
+) {
     Box(
         modifier = Modifier.fillMaxWidth(),
         contentAlignment = Alignment.CenterStart
@@ -220,8 +224,8 @@ private fun EmailField() {
 
             TextField(
                 modifier = Modifier.fillMaxWidth(),
-                value = "email@email.com",
-                onValueChange = { /*TODO: Email text field */ },
+                value = emailText.value,
+                onValueChange = { emailText.value = it },
                 shape = MaterialTheme.shapes.large,
                 leadingIcon = {
                     Icon(
@@ -233,7 +237,8 @@ private fun EmailField() {
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
                     disabledIndicatorColor = Color.Transparent
-                )
+                ),
+                placeholder = { Text(text = emailText.value) }
             )
         }
     }
