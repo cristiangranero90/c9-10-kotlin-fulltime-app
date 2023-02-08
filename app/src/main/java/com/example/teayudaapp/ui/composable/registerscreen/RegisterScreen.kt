@@ -4,6 +4,8 @@ import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
@@ -12,9 +14,14 @@ import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material.icons.outlined.Email
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,8 +32,8 @@ import com.example.teayudaapp.R
 fun RegisterScreen(
     modifier: Modifier = Modifier,
 ){
-    var emailText = remember { mutableStateOf("email@email.com") }
-    var passwordText = remember { mutableStateOf("password") }
+    var emailText = remember { mutableStateOf("") }
+    var passwordText = remember { mutableStateOf("") }
 
     LazyColumn(
         modifier = Modifier
@@ -156,10 +163,16 @@ private fun AgreeRadioButton() {
     }
 }
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 private fun PasswordField(
     passwordText: MutableState<String>
 ) {
+    var visibility = remember { mutableStateOf(true) }
+    var visibilityIcon = if (visibility.value) Icons.Filled.VisibilityOff else Icons.Filled.Visibility
+    var transformation = if (visibility.value) PasswordVisualTransformation() else VisualTransformation.None
+    val keyboardController = LocalSoftwareKeyboardController.current
+
     Box(
         modifier = Modifier.fillMaxWidth(),
         contentAlignment = Alignment.Center
@@ -179,6 +192,12 @@ private fun PasswordField(
                 value = passwordText.value,
                 onValueChange = { passwordText.value = it },
                 shape = MaterialTheme.shapes.large,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                visualTransformation = transformation,
+                maxLines = 1,
+                singleLine = true,
+                keyboardActions = KeyboardActions( onDone = {keyboardController?.hide()}),
+                placeholder = { Text(text = "contraseña", style = MaterialTheme.typography.body1)},
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Default.Lock,
@@ -186,9 +205,10 @@ private fun PasswordField(
                     )
                 },
                 trailingIcon = {
-                    IconButton(onClick = { /*TODO: Visibility*/ }) {
+                    IconButton(
+                        onClick = { visibility.value = !visibility.value }) {
                         Icon(
-                            imageVector = Icons.Filled.VisibilityOff,
+                            imageVector = visibilityIcon,
                             contentDescription = "Password visibility"
                         )
                     }
@@ -203,10 +223,12 @@ private fun PasswordField(
     }
 }
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 private fun EmailField(
     emailText: MutableState<String>,
 ) {
+    val keyboardController = LocalSoftwareKeyboardController.current
     Box(
         modifier = Modifier.fillMaxWidth(),
         contentAlignment = Alignment.CenterStart
@@ -227,6 +249,11 @@ private fun EmailField(
                 value = emailText.value,
                 onValueChange = { emailText.value = it },
                 shape = MaterialTheme.shapes.large,
+                maxLines = 1,
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                keyboardActions = KeyboardActions( onDone = { keyboardController?.hide() }),
+                placeholder = { Text(text = "email@example.com", style = MaterialTheme.typography.body1) },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Outlined.Email,
@@ -237,8 +264,7 @@ private fun EmailField(
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
                     disabledIndicatorColor = Color.Transparent
-                ),
-                placeholder = { Text(text = emailText.value) }
+                )
             )
         }
     }
