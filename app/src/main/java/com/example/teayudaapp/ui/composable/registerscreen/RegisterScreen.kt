@@ -8,6 +8,7 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Facebook
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
@@ -18,6 +19,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -100,9 +102,10 @@ private fun LoginFacebook() {
     ) {
 
         Text(
-            text = "Iniciar sesion con Meta",
+            text = "Iniciar sesion con ",
             style = MaterialTheme.typography.body1
         )
+        Icon(imageVector = Icons.Default.Facebook, contentDescription = "Facebook login")
     }
 }
 
@@ -115,11 +118,11 @@ private fun LoginGoogle() {
         onClick = { /*TODO*/ },
         shape = MaterialTheme.shapes.large,
     ) {
-
         Text(
-            text = "Iniciar sesion con Google",
+            text = "Iniciar sesion con ",
             style = MaterialTheme.typography.body1
         )
+        Icon(painterResource(id = R.drawable.google_icon), contentDescription = "Google login")
     }
 }
 
