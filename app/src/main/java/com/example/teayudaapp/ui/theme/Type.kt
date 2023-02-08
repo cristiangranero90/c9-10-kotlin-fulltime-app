@@ -24,9 +24,15 @@ val Typography = Typography(
     caption = TextStyle(
         fontFamily = Poppins,
         fontWeight = FontWeight.Normal,
-        fontSize = 20.sp
+        fontSize = 10.sp
 
     ),
+
+    h2 = TextStyle(
+        fontFamily = Poppins,
+        fontWeight = FontWeight.Normal,
+        fontSize = 24.sp
+    )
 
     /* Other default text styles to override
     button = TextStyle(
