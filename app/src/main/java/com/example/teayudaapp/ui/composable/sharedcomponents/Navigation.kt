@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.teayudaapp.ui.composable.registerscreen.RegisterScreen
 import com.example.teayudaapp.ui.composable.splashscreen.SplashScreen
 
 @Composable
@@ -20,6 +21,10 @@ fun Navigation(){
         //TODO: Hardcoded entry, create enum class or sealed class
         composable("splash_screen"){
             SplashScreen()
+        }
+
+        composable("register_screen"){
+            RegisterScreen()
         }
     }
 }
