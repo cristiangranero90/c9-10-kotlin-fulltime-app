@@ -27,8 +27,8 @@ class MainActivity : ComponentActivity() {
                     //Content of navigation
                     //TODO: Create the Navigation Structure, from "navigation compose"
 
-                    RegisterScreen()
-                    //Navigation()
+                    //RegisterScreen()
+                    Navigation()
                 }
             }
         }

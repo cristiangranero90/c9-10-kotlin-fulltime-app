@@ -20,7 +20,7 @@ fun Navigation(){
 
         //TODO: Hardcoded entry, create enum class or sealed class
         composable("splash_screen"){
-            SplashScreen()
+            SplashScreen(navController)
         }
 
         composable("register_screen"){
