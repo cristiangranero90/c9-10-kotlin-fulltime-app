@@ -7,10 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -28,7 +25,7 @@ fun SplashScreen(
     navController: NavHostController
 ) {
 
-    var loading = remember { mutableStateOf(true) }
+    var loading by remember { mutableStateOf(true) }
     //Simple splash screen Image, Text, AnimatedDots
     Column(
         modifier = Modifier
@@ -44,15 +41,15 @@ fun SplashScreen(
         Text(text = stringResource(id = R.string.app_tittle) , style = MaterialTheme.typography.body1)
 
         //If loading... etc
-        if (loading.value){
+        if (loading){
             AnimatedDots()
         } else {
             navController.navigate("register_screen")
         }
 
-        LaunchedEffect(loading.value) {
+        LaunchedEffect(loading) {
             delay(3000)
-            loading.value = !loading.value
+            loading = !loading
         }
     }
 }
