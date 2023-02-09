@@ -28,7 +28,10 @@ fun RegisterLoginButtons(
             horizontalArrangement = Arrangement.End
         ) {
             Button(onClick = { /*TODO*/ }, shape = MaterialTheme.shapes.medium) {
-                Text(text = "Registrar")
+                Text(
+                    text = "Registrar",
+                    style = MaterialTheme.typography.body2,
+                    color = MaterialTheme.colors.onSecondary)
             }
             Divider(
                 modifier = Modifier
@@ -37,7 +40,10 @@ fun RegisterLoginButtons(
                     .background(Color.White)
             )
             Button(onClick = { /*TODO*/ }, shape = MaterialTheme.shapes.medium) {
-                Text(text = "Login")
+                Text(
+                    text = "Login",
+                    style = MaterialTheme.typography.body2,
+                    color = MaterialTheme.colors.onSecondary)
             }
         }
     }

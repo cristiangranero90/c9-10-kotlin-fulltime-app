@@ -23,9 +23,14 @@ fun ButtonLoginFacebook() {
     ) {
 
         Text(
-            text = "Iniciar sesion con ",
-            style = MaterialTheme.typography.body1
+            text = "Registrarse con ",
+            style = MaterialTheme.typography.h3,
+            color = MaterialTheme.colors.onSecondary
         )
-        Icon(imageVector = Icons.Default.Facebook, contentDescription = "Facebook login")
+
+        Icon(
+            imageVector = Icons.Default.Facebook,
+            contentDescription = "Facebook login",
+            tint = MaterialTheme.colors.onSecondary)
     }
 }

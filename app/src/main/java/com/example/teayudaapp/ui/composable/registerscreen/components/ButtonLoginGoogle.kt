@@ -22,9 +22,13 @@ fun ButtonLoginGoogle() {
         shape = MaterialTheme.shapes.large,
     ) {
         Text(
-            text = "Iniciar sesion con ",
-            style = MaterialTheme.typography.body1
+            text = "Registrarse con ",
+            style = MaterialTheme.typography.h3,
+            color = MaterialTheme.colors.onSecondary
         )
-        Icon(painterResource(id = R.drawable.google_icon), contentDescription = "Google login")
+        Icon(
+            painterResource(id = R.drawable.google_icon),
+            contentDescription = "Google sign up",
+            tint = MaterialTheme.colors.onSecondary)
     }
 }

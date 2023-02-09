@@ -39,7 +39,7 @@ fun TittleView() {
             modifier = Modifier
                 .fillMaxWidth(1f)
                 .height(16.dp)
-                .absoluteOffset(y = 46.dp)
+                .absoluteOffset(y = 55.dp)
                 .rotate(175f)
             , color = MaterialTheme.colors.background
         )

@@ -37,7 +37,7 @@ fun EmailField(
         ) {
             Text(
                 text = "Email",
-                style = MaterialTheme.typography.body1,
+                style = MaterialTheme.typography.h3,
                 textAlign = TextAlign.Left
             )
 
@@ -50,11 +50,15 @@ fun EmailField(
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
                 keyboardActions = KeyboardActions( onDone = { keyboardController?.hide() }),
-                placeholder = { Text(text = "email@example.com", style = MaterialTheme.typography.body1) },
+                placeholder = { Text(
+                    text = "email@example.com",
+                    style = MaterialTheme.typography.h3,
+                color = MaterialTheme.colors.onSecondary) },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Outlined.Email,
-                        contentDescription = "Email entry"
+                        contentDescription = "Email entry",
+                        tint = MaterialTheme.colors.onSecondary
                     )
                 },
                 colors = TextFieldDefaults.textFieldColors(

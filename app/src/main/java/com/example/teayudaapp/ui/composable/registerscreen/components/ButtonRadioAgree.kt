@@ -1,17 +1,15 @@
 package com.example.teayudaapp.ui.composable.registerscreen.components
 
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.RadioButton
-import androidx.compose.material.Text
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.example.teayudaapp.R
 
 @Composable
 fun RadioButtonAgree(
@@ -24,15 +22,19 @@ fun RadioButtonAgree(
     ) {
         RadioButton(
             selected = false,
-            onClick = { },
+            onClick = { /*TODO: Set on click */},
             modifier = Modifier
-                .size(24.dp)
+                .size(14.dp),
+            colors = RadioButtonDefaults.colors(
+                unselectedColor = MaterialTheme.colors.onSecondary,
+                selectedColor = MaterialTheme.colors.onSecondary)
         )
+        Spacer(modifier = Modifier.width(8.dp))
 
         Text(
-            text = "Aceptar los terminos y condiciones",
-            style = MaterialTheme.typography.body1,
-            textAlign = TextAlign.Center
+            text = stringResource(id = R.string.app_terms),
+            style = MaterialTheme.typography.h3,
+            textAlign = TextAlign.Right
         )
     }
 }

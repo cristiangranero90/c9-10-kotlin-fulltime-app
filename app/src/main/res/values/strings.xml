@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TEAyudaApp</string>
     <string name="app_tittle">Brand name</string>
+    <string name="app_terms">Aceptar los terminos y condiciones</string>
 </resources>

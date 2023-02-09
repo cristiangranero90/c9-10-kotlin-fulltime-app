@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -38,7 +39,9 @@ fun SplashScreen(
             painter = painterResource(id = R.drawable.home_material),
             contentDescription = "splash image")
         
-        Text(text = stringResource(id = R.string.app_tittle) , style = MaterialTheme.typography.body1)
+        Text(text = stringResource(id = R.string.app_tittle) ,
+            style = MaterialTheme.typography.body1,
+            color = Color(0xFFFFF2F2))
 
         //If loading... etc
         if (loading){

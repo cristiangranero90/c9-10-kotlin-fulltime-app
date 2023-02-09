@@ -48,7 +48,7 @@ fun PasswordField(
             ) {
             Text(
                 text = "Contraseña",
-                style = MaterialTheme.typography.body1,
+                style = MaterialTheme.typography.h3,
                 textAlign = TextAlign.Left
             )
             TextField(
@@ -61,11 +61,15 @@ fun PasswordField(
                 maxLines = 1,
                 singleLine = true,
                 keyboardActions = KeyboardActions( onDone = {keyboardController?.hide()}),
-                placeholder = { Text(text = "contraseña", style = MaterialTheme.typography.body1) },
+                placeholder = { Text(
+                    text = "contraseña",
+                    style = MaterialTheme.typography.h3,
+                    color = MaterialTheme.colors.onSecondary) },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Default.Lock,
-                        contentDescription = "Lock icon"
+                        contentDescription = "Lock icon",
+                        tint = MaterialTheme.colors.onSecondary
                     )
                 },
                 trailingIcon = {
@@ -73,7 +77,8 @@ fun PasswordField(
                         onClick = { visibility.value = !visibility.value }) {
                         Icon(
                             imageVector = visibilityIcon,
-                            contentDescription = "Password visibility"
+                            contentDescription = "Password visibility",
+                            tint = MaterialTheme.colors.onSecondary
                         )
                     }
                 },

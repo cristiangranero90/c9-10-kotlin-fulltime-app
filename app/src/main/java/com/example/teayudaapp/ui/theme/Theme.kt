@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.Color
 private val BlueBack = Color(0xFF7286D3)
 private val BluePrimary = Color(0xFF8EA7E9)
 private val DeepBlue = Color(0xFF01002E)
+private val SmoothWhite = Color(0xFFFFF2F2)
 
 private val DarkColorPalette = darkColors(
     primary = Purple200,
@@ -21,7 +22,7 @@ private val DarkColorPalette = darkColors(
 //TODO: We need to add more colors from the specific colors palette (See Figma project)
 private val LightColorPalette = lightColors(
     primary = BluePrimary,
-    primaryVariant = Purple700,
+    primaryVariant = SmoothWhite,
     secondary = Teal200,
     onSecondary = DeepBlue,
     background = BlueBack,
