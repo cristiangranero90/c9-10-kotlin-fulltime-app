@@ -21,9 +21,12 @@ fun RegisterScreen(
     val emailText = remember { mutableStateOf("") }
     val passwordText = remember { mutableStateOf("") }
     val loginScreen = remember { mutableStateOf(true) }
+    val largeSpacer = 21.67.dp
+    val smallSpacer = 11.dp
     val colorsBackground = if (loginScreen.value) MaterialTheme.colors.primary else MaterialTheme.colors.background
     val colorsButton = if (loginScreen.value) MaterialTheme.colors.background else MaterialTheme.colors.primary
     val padding = 6.dp
+    //Mutable data of strings needed in the whole screen
     val dataString = if (loginScreen.value) SharedStringsResources(
         emailId = R.string.login_email,
         passwordId = R.string.login_password,
@@ -50,32 +53,33 @@ fun RegisterScreen(
             RegisterLoginButtons(padding, loginScreen.value) { buttonClicked ->
                 loginScreen.value = buttonClicked
             }
-            Spacer(modifier = Modifier.height(11.dp))
+            Spacer(modifier = Modifier.height(smallSpacer))
         }
 
         item {
             EmailField(emailText, padding, dataString, colorsButton)
-            Spacer(modifier = Modifier.height(21.67.dp))
+            Spacer(modifier = Modifier.height(largeSpacer))
         }
 
         item {
             PasswordField(passwordText, padding, dataString, colorsButton)
-            Spacer(modifier = Modifier.height(21.67.dp))
         }
 
         item {
             if (!loginScreen.value){
+                Spacer(modifier = Modifier.height(largeSpacer))
                 RadioButtonAgree(padding)
-                Spacer(modifier = Modifier.height(21.67.dp))
+                Spacer(modifier = Modifier.height(largeSpacer))
             }
             else{
-                //TODO: Forgotten password
+                ForgottenPassword(padding, dataString)
+                Spacer(modifier = Modifier.height(largeSpacer))
             }
         }
 
         item {
             ButtonContinue()
-            Spacer(modifier = Modifier.height(21.67.dp))
+            Spacer(modifier = Modifier.height(largeSpacer))
         }
 
         item {
@@ -83,36 +87,20 @@ fun RegisterScreen(
                 Modifier
                     .height(2.dp)
                     .padding(start = padding, end = padding))
-            Spacer(modifier = Modifier.height(21.67.dp))
+            Spacer(modifier = Modifier.height(largeSpacer))
         }
 
         item {
             ButtonLoginGoogle(dataString, colorsButton)
-            Spacer(modifier = Modifier.height(21.67.dp))
+            Spacer(modifier = Modifier.height(largeSpacer))
         }
 
         item {
             ButtonLoginFacebook(dataString, colorsButton)
-            Spacer(modifier = Modifier.height(21.67.dp))
+            Spacer(modifier = Modifier.height(largeSpacer))
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @Composable
 @Preview(showBackground = true, showSystemUi = true, uiMode = UI_MODE_NIGHT_NO)
