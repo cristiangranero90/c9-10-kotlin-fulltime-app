@@ -17,7 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import com.example.teayudaapp.R
 import com.example.teayudaapp.ui.composable.sharedcomponents.AnimatedDots
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 
 
 @Composable
@@ -26,6 +26,9 @@ fun SplashScreen(
 ) {
 
     var loading by remember { mutableStateOf(true) }
+    val timeMilis = 3000L
+    val scope = rememberCoroutineScope().coroutineContext
+
     //Simple splash screen Image, Text, AnimatedDots
     Column(
         modifier = Modifier
@@ -44,13 +47,14 @@ fun SplashScreen(
 
         //If loading... etc
         if (loading){
-            AnimatedDots(loading)
+            AnimatedDots()
         } else {
             navController.navigate("register_screen")
         }
-
-        LaunchedEffect(loading) {
-            delay(3000)
+        LaunchedEffect(loading){
+            if (loading){
+                delay(timeMilis)
+            }
             loading = !loading
         }
     }

@@ -1,9 +1,6 @@
 package com.example.teayudaapp.ui.composable.sharedcomponents
 
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.RepeatMode
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -19,7 +16,6 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun AnimatedDots(
-    running: Boolean,
     circleColor: Color = Color(0xFFE5E0FF),
     circleSize: Dp = 9.dp,
     animationDelay: Int = 400,
@@ -41,7 +37,7 @@ fun AnimatedDots(
 
     circles.forEachIndexed { index, animatable ->
 
-        LaunchedEffect(running) {
+        LaunchedEffect(Unit) {
 
             // Use coroutine delay to sync animations
             delay(timeMillis = (animationDelay / circles.size).toLong() * index)
@@ -71,7 +67,6 @@ fun AnimatedDots(
             if (index != 0) {
                 Spacer(modifier = Modifier.width(width = 6.dp))
             }
-
             Box(
                 modifier = Modifier
                     .size(size = circleSize)
@@ -81,6 +76,7 @@ fun AnimatedDots(
                             .copy(alpha = animatable.value)
                     )
             ) {
+
             }
         }
     }
