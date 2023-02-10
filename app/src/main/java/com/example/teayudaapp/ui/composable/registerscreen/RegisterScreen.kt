@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.teayudaapp.R
 import com.example.teayudaapp.ui.composable.registerscreen.components.*
 
 
@@ -17,39 +18,59 @@ import com.example.teayudaapp.ui.composable.registerscreen.components.*
 fun RegisterScreen(
     modifier: Modifier = Modifier,
 ){
-    var emailText = remember { mutableStateOf("") }
-    var passwordText = remember { mutableStateOf("") }
+    val emailText = remember { mutableStateOf("") }
+    val passwordText = remember { mutableStateOf("") }
+    val loginScreen = remember { mutableStateOf(true) }
+    val colorsBackground = if (loginScreen.value) MaterialTheme.colors.primary else MaterialTheme.colors.background
+    val colorsButton = if (loginScreen.value) MaterialTheme.colors.background else MaterialTheme.colors.primary
     val padding = 6.dp
+    val dataString = if (loginScreen.value) SharedStringsResources(
+        emailId = R.string.login_email,
+        passwordId = R.string.login_password,
+        termsOrForgottenId = R.string.forgotten_password,
+        registerButton = R.string.button_login)
+    else SharedStringsResources(
+        emailId = R.string.register_email,
+        passwordId = R.string.register_password,
+        termsOrForgottenId = R.string.app_terms,
+        registerButton = R.string.button_register)
 
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.background),
+            .background(colorsBackground),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
         item {
-            TittleView()
+            TittleView(loginScreen.value, colorsBackground)
         }
         item {
-            RegisterLoginButtons(padding)
+            RegisterLoginButtons(padding, loginScreen.value) { buttonClicked ->
+                loginScreen.value = buttonClicked
+            }
             Spacer(modifier = Modifier.height(11.dp))
         }
 
         item {
-            EmailField(emailText, padding)
+            EmailField(emailText, padding, dataString, colorsButton)
             Spacer(modifier = Modifier.height(21.67.dp))
         }
 
         item {
-            PasswordField(passwordText, padding)
+            PasswordField(passwordText, padding, dataString, colorsButton)
             Spacer(modifier = Modifier.height(21.67.dp))
         }
 
         item {
-            RadioButtonAgree(padding)
-            Spacer(modifier = Modifier.height(21.67.dp))
+            if (!loginScreen.value){
+                RadioButtonAgree(padding)
+                Spacer(modifier = Modifier.height(21.67.dp))
+            }
+            else{
+                //TODO: Forgotten password
+            }
         }
 
         item {
@@ -66,12 +87,12 @@ fun RegisterScreen(
         }
 
         item {
-            ButtonLoginGoogle()
+            ButtonLoginGoogle(dataString, colorsButton)
             Spacer(modifier = Modifier.height(21.67.dp))
         }
 
         item {
-            ButtonLoginFacebook()
+            ButtonLoginFacebook(dataString, colorsButton)
             Spacer(modifier = Modifier.height(21.67.dp))
         }
     }

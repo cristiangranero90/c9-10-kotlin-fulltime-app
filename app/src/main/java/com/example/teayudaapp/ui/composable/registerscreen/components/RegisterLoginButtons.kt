@@ -2,10 +2,7 @@ package com.example.teayudaapp.ui.composable.registerscreen.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
-import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -15,8 +12,11 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun RegisterLoginButtons(
-    padding: Dp
+    padding: Dp,
+    isLogin: Boolean,
+    onButtonClicked: (Boolean) -> Unit
 ) {
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -27,11 +27,14 @@ fun RegisterLoginButtons(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.End
         ) {
-            Button(onClick = { /*TODO*/ }, shape = MaterialTheme.shapes.medium) {
+            Button(
+                onClick = { onButtonClicked(false) },
+                shape = MaterialTheme.shapes.medium,
+            ) {
                 Text(
                     text = "Registrar",
                     style = MaterialTheme.typography.body2,
-                    color = MaterialTheme.colors.onSecondary)
+                    color = if (!isLogin) MaterialTheme.colors.onSecondary else Color.White)
             }
             Divider(
                 modifier = Modifier
@@ -39,11 +42,14 @@ fun RegisterLoginButtons(
                     .width(1.dp)
                     .background(Color.White)
             )
-            Button(onClick = { /*TODO*/ }, shape = MaterialTheme.shapes.medium) {
+            Button(
+                onClick = { onButtonClicked(true) },
+                shape = MaterialTheme.shapes.medium
+            ) {
                 Text(
                     text = "Login",
                     style = MaterialTheme.typography.body2,
-                    color = MaterialTheme.colors.onSecondary)
+                    color = if (isLogin) MaterialTheme.colors.onSecondary else Color.White)
             }
         }
     }

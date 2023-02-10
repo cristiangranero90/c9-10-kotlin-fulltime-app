@@ -13,6 +13,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
@@ -22,6 +23,9 @@ import androidx.compose.ui.unit.Dp
 fun EmailField(
     emailText: MutableState<String>,
     paddingValues: Dp,
+    dataString: SharedStringsResources,
+    colors: Color,
+    modifier: Modifier = Modifier,
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     Box(
@@ -36,7 +40,7 @@ fun EmailField(
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Email",
+                text = stringResource(id = dataString.emailId),
                 style = MaterialTheme.typography.h3,
                 textAlign = TextAlign.Left
             )
@@ -53,7 +57,7 @@ fun EmailField(
                 placeholder = { Text(
                     text = "email@example.com",
                     style = MaterialTheme.typography.h3,
-                color = MaterialTheme.colors.onSecondary) },
+                    color = MaterialTheme.colors.onSecondary) },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Outlined.Email,
@@ -62,6 +66,7 @@ fun EmailField(
                     )
                 },
                 colors = TextFieldDefaults.textFieldColors(
+                    backgroundColor = colors,
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
                     disabledIndicatorColor = Color.Transparent
