@@ -19,6 +19,7 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun AnimatedDots(
+    running: Boolean,
     circleColor: Color = Color(0xFFE5E0FF),
     circleSize: Dp = 9.dp,
     animationDelay: Int = 400,
@@ -40,7 +41,7 @@ fun AnimatedDots(
 
     circles.forEachIndexed { index, animatable ->
 
-        LaunchedEffect(Unit) {
+        LaunchedEffect(running) {
 
             // Use coroutine delay to sync animations
             delay(timeMillis = (animationDelay / circles.size).toLong() * index)
