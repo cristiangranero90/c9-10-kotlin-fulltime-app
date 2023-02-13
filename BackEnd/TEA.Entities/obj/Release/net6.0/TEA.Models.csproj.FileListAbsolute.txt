@@ -1,0 +1,12 @@
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\bin\Release\net6.0\TEA.Models.deps.json
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\bin\Release\net6.0\TEA.Models.dll
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\bin\Release\net6.0\TEA.Models.pdb
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\obj\Release\net6.0\TEA.Models.csproj.AssemblyReference.cache
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\obj\Release\net6.0\TEA.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\obj\Release\net6.0\TEA.Models.AssemblyInfoInputs.cache
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\obj\Release\net6.0\TEA.Models.AssemblyInfo.cs
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\obj\Release\net6.0\TEA.Models.csproj.CoreCompileInputs.cache
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\obj\Release\net6.0\TEA.Models.dll
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\obj\Release\net6.0\refint\TEA.Models.dll
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\obj\Release\net6.0\TEA.Models.pdb
+C:\Users\trRavz\source\repos\TEA\TEA.Entities\obj\Release\net6.0\ref\TEA.Models.dll
