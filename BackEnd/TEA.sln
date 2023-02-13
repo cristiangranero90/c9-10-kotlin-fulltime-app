@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEA.Dal", "TEA.Dal\TEA.Dal.csproj", "{40828A7D-073D-48C5-A29E-E73BEE6B572D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEA.Dal", "TEA.Dal\TEA.Dal.csproj", "{40828A7D-073D-48C5-A29E-E73BEE6B572D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEA.Dal.EFC", "TEA.Dal.EFC\TEA.Dal.EFC.csproj", "{542D12CB-DF9B-4627-ADA4-3A6BFED5CA43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEA.Dal.EFC", "TEA.Dal.EFC\TEA.Dal.EFC.csproj", "{542D12CB-DF9B-4627-ADA4-3A6BFED5CA43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEA.Models", "TEA.Entities\TEA.Models.csproj", "{43A370F2-A644-46CA-8E77-0CDCC5E273DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEA.Models", "TEA.Entities\TEA.Models.csproj", "{43A370F2-A644-46CA-8E77-0CDCC5E273DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEA.Services", "TEA.Services\TEA.Services.csproj", "{8EB15AA6-1420-4C28-9FA6-E9BE1F153889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEA.Services", "TEA.Services\TEA.Services.csproj", "{8EB15AA6-1420-4C28-9FA6-E9BE1F153889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEA.Helpers", "TEA.Helpers\TEA.Helpers.csproj", "{D16DB4D2-635E-4876-A36B-31DF8E372C24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEA.Helpers", "TEA.Helpers\TEA.Helpers.csproj", "{D16DB4D2-635E-4876-A36B-31DF8E372C24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEA.WebApi", "TEA.WebApi\TEA.WebApi.csproj", "{D7E1E809-4087-4B25-9190-7DEB78ED81C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEA.WebApi", "..\..\TEA\TEA.WebApi\TEA.WebApi.csproj", "{05600D65-26FE-4FB5-B564-92657DA02054}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{D16DB4D2-635E-4876-A36B-31DF8E372C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D16DB4D2-635E-4876-A36B-31DF8E372C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D16DB4D2-635E-4876-A36B-31DF8E372C24}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7E1E809-4087-4B25-9190-7DEB78ED81C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7E1E809-4087-4B25-9190-7DEB78ED81C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7E1E809-4087-4B25-9190-7DEB78ED81C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7E1E809-4087-4B25-9190-7DEB78ED81C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05600D65-26FE-4FB5-B564-92657DA02054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05600D65-26FE-4FB5-B564-92657DA02054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05600D65-26FE-4FB5-B564-92657DA02054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05600D65-26FE-4FB5-B564-92657DA02054}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

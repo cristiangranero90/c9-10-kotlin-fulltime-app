@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nePTy+1re23pCL40Hqvm9THqo/9rrloWyhTsI3noGDQhdnniAUf3V0q5i/28lOF7jHlKNdfx3elCgpFkl++UDA==",
+  "dgSpecHash": "7w6wtxxCQ8Bxj5idGKrTYxKY8tJ10bsP7fFz/fr0yrGm8kTjZOMbXPIS1hiwYaCsAhzXqMnMonoohd00DLIMEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\trRavz\\source\\repos\\TEA\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj",
+  "projectFilePath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\trRavz\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\trRavz\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

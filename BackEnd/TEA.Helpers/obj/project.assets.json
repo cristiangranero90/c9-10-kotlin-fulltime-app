@@ -586,11 +586,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\trRavz\\source\\repos\\TEA\\TEA.Helpers\\TEA.Helpers.csproj",
+      "projectUniqueName": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj",
       "projectName": "TEA.Helpers",
-      "projectPath": "C:\\Users\\trRavz\\source\\repos\\TEA\\TEA.Helpers\\TEA.Helpers.csproj",
+      "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj",
       "packagesPath": "C:\\Users\\trRavz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\trRavz\\source\\repos\\TEA\\TEA.Helpers\\obj\\",
+      "outputPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
