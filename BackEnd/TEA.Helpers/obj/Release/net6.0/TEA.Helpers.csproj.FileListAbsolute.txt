@@ -1,0 +1,12 @@
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\bin\Release\net6.0\TEA.Helpers.deps.json
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\bin\Release\net6.0\TEA.Helpers.dll
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\bin\Release\net6.0\TEA.Helpers.pdb
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\obj\Release\net6.0\TEA.Helpers.csproj.AssemblyReference.cache
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\obj\Release\net6.0\TEA.Helpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\obj\Release\net6.0\TEA.Helpers.AssemblyInfoInputs.cache
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\obj\Release\net6.0\TEA.Helpers.AssemblyInfo.cs
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\obj\Release\net6.0\TEA.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\obj\Release\net6.0\TEA.Helpers.dll
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\obj\Release\net6.0\refint\TEA.Helpers.dll
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\obj\Release\net6.0\TEA.Helpers.pdb
+C:\Users\trRavz\source\repos\TEA\TEA.Helpers\obj\Release\net6.0\ref\TEA.Helpers.dll
