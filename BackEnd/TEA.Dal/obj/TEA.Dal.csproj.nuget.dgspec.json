@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal\\TEA.Dal.csproj": {}
+    "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal\\TEA.Dal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj": {
+    "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj",
+        "projectUniqueName": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj",
         "projectName": "TEA.Dal.EFC",
-        "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj",
+        "projectPath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj",
         "packagesPath": "C:\\Users\\trRavz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\obj\\",
         "projectStyle": "PackageReference",
@@ -35,14 +35,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj": {
-                "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj"
+              "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj": {
+                "projectPath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj"
               },
-              "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj": {
-                "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj"
+              "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj": {
+                "projectPath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj"
               },
-              "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj": {
-                "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj"
+              "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj": {
+                "projectPath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj"
               }
             }
           }
@@ -92,12 +92,12 @@
         }
       }
     },
-    "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal\\TEA.Dal.csproj": {
+    "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal\\TEA.Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal\\TEA.Dal.csproj",
+        "projectUniqueName": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal\\TEA.Dal.csproj",
         "projectName": "TEA.Dal",
-        "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal\\TEA.Dal.csproj",
+        "projectPath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal\\TEA.Dal.csproj",
         "packagesPath": "C:\\Users\\trRavz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal\\obj\\",
         "projectStyle": "PackageReference",
@@ -123,11 +123,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj": {
-                "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj"
+              "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj": {
+                "projectPath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Dal.EFC\\TEA.Dal.EFC.csproj"
               },
-              "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj": {
-                "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj"
+              "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj": {
+                "projectPath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj"
               }
             }
           }
@@ -161,12 +161,12 @@
         }
       }
     },
-    "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj": {
+    "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj",
+        "projectUniqueName": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj",
         "projectName": "TEA.Models",
-        "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj",
+        "projectPath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj",
         "packagesPath": "C:\\Users\\trRavz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\obj\\",
         "projectStyle": "PackageReference",
@@ -223,12 +223,12 @@
         }
       }
     },
-    "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj": {
+    "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj",
+        "projectUniqueName": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj",
         "projectName": "TEA.Helpers",
-        "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj",
+        "projectPath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\TEA.Helpers.csproj",
         "packagesPath": "C:\\Users\\trRavz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Helpers\\obj\\",
         "projectStyle": "PackageReference",
@@ -295,12 +295,12 @@
         }
       }
     },
-    "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj": {
+    "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj",
+        "projectUniqueName": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj",
         "projectName": "TEA.Services",
-        "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj",
+        "projectPath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj",
         "packagesPath": "C:\\Users\\trRavz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\obj\\",
         "projectStyle": "PackageReference",

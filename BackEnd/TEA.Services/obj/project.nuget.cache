@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qAFq7gwf1cNUOa6xwU/sdEtoAtAY63GuKPITM8qCZlz3nSbu+LSsqis4qOly28QdmR210VqyqxFPNcHcJKLwxA==",
+  "dgSpecHash": "QV0AKTLXjWrJXUT845AXRux/XfOGOqWSPnARfp+cKzWnRU/E4JfppMSV7zWS0cNRI3Lv8U8MT1rwwFoNNpS9+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj",
+  "projectFilePath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Services\\TEA.Services.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

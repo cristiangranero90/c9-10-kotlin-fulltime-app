@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TEA.Models
-build_property.ProjectDir = C:\Users\trRavz\Source\Repos\c9-10-kotlin-fulltime\BackEnd\TEA.Entities\
+build_property.ProjectDir = C:\Users\trRavz\source\repos\c9-10-kotlin-fulltime\BackEnd\TEA.Entities\

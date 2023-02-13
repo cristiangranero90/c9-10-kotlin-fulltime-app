@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEA.Services", "TEA.Service
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEA.Helpers", "TEA.Helpers\TEA.Helpers.csproj", "{D16DB4D2-635E-4876-A36B-31DF8E372C24}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEA.WebApi", "..\..\TEA\TEA.WebApi\TEA.WebApi.csproj", "{05600D65-26FE-4FB5-B564-92657DA02054}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEA.WebApi", "TEA.WebApi\TEA.WebApi.csproj", "{ABD015D9-8145-4F50-B58A-4E099A0F8D8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{D16DB4D2-635E-4876-A36B-31DF8E372C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D16DB4D2-635E-4876-A36B-31DF8E372C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D16DB4D2-635E-4876-A36B-31DF8E372C24}.Release|Any CPU.Build.0 = Release|Any CPU
-		{05600D65-26FE-4FB5-B564-92657DA02054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05600D65-26FE-4FB5-B564-92657DA02054}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05600D65-26FE-4FB5-B564-92657DA02054}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05600D65-26FE-4FB5-B564-92657DA02054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABD015D9-8145-4F50-B58A-4E099A0F8D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD015D9-8145-4F50-B58A-4E099A0F8D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD015D9-8145-4F50-B58A-4E099A0F8D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD015D9-8145-4F50-B58A-4E099A0F8D8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
