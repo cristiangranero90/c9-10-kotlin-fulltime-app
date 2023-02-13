@@ -1,8 +1,10 @@
 package com.example.teayudaapp.homescreen.presentation
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -11,8 +13,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.teayudaapp.homescreen.presentation.components.BottomBar
+import com.example.teayudaapp.sharedcomponents.BottomBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeTopBar
+import com.example.teayudaapp.homescreen.presentation.components.HomeViewList
 
 @Composable
 fun HomeScreen(){
@@ -43,7 +46,14 @@ fun HomeScreen(){
         Column(
             modifier = Modifier.padding(paddingValues)
         ) {
-            Text(text = "One text")
+            HomeViewList()
+
+            LazyColumn(
+                modifier = Modifier.padding(paddingValues)
+            ) {
+                item { Text(text = "One text") }
+
+            }
         }
     }
 }
