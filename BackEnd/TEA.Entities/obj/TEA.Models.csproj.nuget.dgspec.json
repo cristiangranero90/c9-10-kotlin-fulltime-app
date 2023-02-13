@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj": {}
+    "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj": {
+    "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj",
+        "projectUniqueName": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj",
         "projectName": "TEA.Models",
-        "projectPath": "C:\\Users\\trRavz\\source\\repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj",
+        "projectPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\TEA.Models.csproj",
         "packagesPath": "C:\\Users\\trRavz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\trRavz\\Source\\Repos\\c9-10-kotlin-fulltime\\BackEnd\\TEA.Entities\\obj\\",
         "projectStyle": "PackageReference",
