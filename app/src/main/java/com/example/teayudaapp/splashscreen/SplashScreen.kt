@@ -1,4 +1,4 @@
-package com.example.teayudaapp.ui.composable.splashscreen
+package com.example.teayudaapp.splashscreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -16,7 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import com.example.teayudaapp.R
-import com.example.teayudaapp.ui.composable.sharedcomponents.AnimatedDots
+import com.example.teayudaapp.sharedcomponents.AnimatedDots
 import kotlinx.coroutines.*
 
 

@@ -1,4 +1,4 @@
-package com.example.teayudaapp.ui.composable.registerscreen.components
+package com.example.teayudaapp.registerscreen.presentation.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardActions
@@ -17,6 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
+import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable

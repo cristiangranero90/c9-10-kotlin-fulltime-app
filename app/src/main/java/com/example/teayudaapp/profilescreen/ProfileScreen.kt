@@ -1,4 +1,4 @@
-package com.example.teayudaapp.ui.composable.profilescreen
+package com.example.teayudaapp.profilescreen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview

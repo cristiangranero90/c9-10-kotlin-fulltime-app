@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -47,6 +50,13 @@ android {
 }
 
 dependencies {
+    //Dagger Hilt
+    def hilt_compiler_version = "1.0.0"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "androidx.hilt:hilt-navigation-compose:$hilt_compiler_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_compiler_version"
+
     //Navigation compose
     def nav_version = "2.5.3"
     implementation("androidx.navigation:navigation-compose:$nav_version")
@@ -66,4 +76,7 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+}
+kapt {
+    correctErrorTypes = true
 }

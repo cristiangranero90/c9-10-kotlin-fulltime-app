@@ -1,4 +1,4 @@
-package com.example.teayudaapp.ui.composable.sharedcomponents
+package com.example.teayudaapp.sharedcomponents
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -6,8 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.teayudaapp.ui.composable.registerscreen.RegisterScreen
-import com.example.teayudaapp.ui.composable.splashscreen.SplashScreen
+import com.example.teayudaapp.registerscreen.presentation.RegisterScreen
+import com.example.teayudaapp.splashscreen.SplashScreen
 
 @Composable
 fun Navigation(){

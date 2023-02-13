@@ -1,4 +1,4 @@
-package com.example.teayudaapp.ui.composable.registerscreen
+package com.example.teayudaapp.registerscreen.presentation
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.background
@@ -11,7 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.teayudaapp.R
-import com.example.teayudaapp.ui.composable.registerscreen.components.*
+import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
+import com.example.teayudaapp.registerscreen.presentation.components.*
 
 
 @Composable

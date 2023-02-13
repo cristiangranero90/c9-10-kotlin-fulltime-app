@@ -1,4 +1,4 @@
-package com.example.teayudaapp.ui.composable.registerscreen.components
+package com.example.teayudaapp.registerscreen.domain
 
 data class SharedStringsResources (
     val emailId: Int,

@@ -1,4 +1,4 @@
-package com.example.teayudaapp.ui.composable.registerscreen.components
+package com.example.teayudaapp.registerscreen.presentation.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
+import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 
 @Composable
 fun ForgottenPassword(

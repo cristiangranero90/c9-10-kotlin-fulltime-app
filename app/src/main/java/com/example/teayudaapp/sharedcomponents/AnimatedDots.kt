@@ -1,4 +1,4 @@
-package com.example.teayudaapp.ui.composable.sharedcomponents
+package com.example.teayudaapp.sharedcomponents
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background

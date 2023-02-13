@@ -1,4 +1,4 @@
-package com.example.teayudaapp.ui.composable.registerscreen.components
+package com.example.teayudaapp.registerscreen.presentation.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardActions
@@ -23,6 +23,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
+import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
@@ -33,9 +34,9 @@ fun PasswordField(
     colors: Color,
     modifier: Modifier = Modifier
 ) {
-    var visibility = remember { mutableStateOf(true) }
-    var visibilityIcon = if (visibility.value) Icons.Filled.VisibilityOff else Icons.Filled.Visibility
-    var transformation = if (visibility.value) PasswordVisualTransformation() else VisualTransformation.None
+    val visibility = remember { mutableStateOf(true) }
+    val visibilityIcon = if (visibility.value) Icons.Filled.VisibilityOff else Icons.Filled.Visibility
+    val transformation = if (visibility.value) PasswordVisualTransformation() else VisualTransformation.None
     val keyboardController = LocalSoftwareKeyboardController.current
 
     Box(
