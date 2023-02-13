@@ -10,9 +10,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.teayudaapp.R
 
 @Composable
 fun HomeViewList(
@@ -26,10 +28,9 @@ fun HomeViewList(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceAround,
     ) {
-        Text(text = "Noticias", style = MaterialTheme.typography.body2, fontWeight = FontWeight.Bold)
-        Text(text = "Top", style = MaterialTheme.typography.body2, fontWeight = FontWeight.Bold)
-        Text(text = "Trends", style = MaterialTheme.typography.body2, fontWeight = FontWeight.Bold)
-
+        Text(text = stringResource(id = R.string.news_string), style = MaterialTheme.typography.body2, fontWeight = FontWeight.Bold)
+        Text(text = stringResource(id = R.string.top_string), style = MaterialTheme.typography.body2, fontWeight = FontWeight.Bold)
+        Text(text = stringResource(id = R.string.trends_string), style = MaterialTheme.typography.body2, fontWeight = FontWeight.Bold)
     }
 }
 

@@ -11,4 +11,9 @@
     <string name="login_password">Contraseña</string>
     <string name="button_login">Iniciar sesion con</string>
     <string name="forgotten_password">Olvidaste tu contraseña?</string>
+
+    <string name="news_string">Noticias</string>
+    <string name="top_string">Top</string>
+    <string name="trends_string">Email</string>
+    <string name="search_placeholder">Buscar: Usuarios, Hashtags</string>
 </resources>
