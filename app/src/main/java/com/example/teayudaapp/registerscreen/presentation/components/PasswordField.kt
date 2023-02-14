@@ -23,6 +23,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -68,7 +69,7 @@ fun PasswordField(
                 keyboardActions = KeyboardActions( onDone = {keyboardController?.hide()}),
                 placeholder = { Text(
                     text = "contraseña",
-                    style = MaterialTheme.typography.h3,
+                    style = MaterialTheme.typography.body2,
                     color = MaterialTheme.colors.onSecondary) },
                 leadingIcon = {
                     Icon(

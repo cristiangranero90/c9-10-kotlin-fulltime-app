@@ -1,6 +1,7 @@
 package com.example.teayudaapp.homescreen.presentation.components
 
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
@@ -16,6 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -34,7 +36,7 @@ fun HomeTopBar(
                 value = searchText.value,
                 onValueChange = { searchText.value = it },
                 shape = MaterialTheme.shapes.large,
-                modifier = Modifier.height(45.dp),
+                modifier = Modifier.height(47.dp),
                 maxLines = 1,
                 singleLine = true,
                 textStyle = TextStyle(fontSize = 12.sp),
@@ -42,12 +44,13 @@ fun HomeTopBar(
                 placeholder = { Text(
                     text = stringResource(id = com.example.teayudaapp.R.string.search_placeholder),
                     fontSize = 12.sp,
-                    color = MaterialTheme.colors.onSecondary) },
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color(0xFF262763)) },
                 trailingIcon = {
                     Icon(
                         imageVector = Icons.Outlined.Search,
                         contentDescription = "Search space",
-                        tint = MaterialTheme.colors.onSecondary
+                        tint = Color(0xFF262763)
                     )
                 },
                 colors = TextFieldDefaults.textFieldColors(

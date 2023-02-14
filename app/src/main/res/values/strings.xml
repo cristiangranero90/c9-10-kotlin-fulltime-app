@@ -14,6 +14,6 @@
 
     <string name="news_string">Noticias</string>
     <string name="top_string">Top</string>
-    <string name="trends_string">Email</string>
-    <string name="search_placeholder">Buscar: Usuarios, Hashtags</string>
+    <string name="trends_string">Trends</string>
+    <string name="search_placeholder">Buscar: Usuarios, Hashtags...</string>
 </resources>

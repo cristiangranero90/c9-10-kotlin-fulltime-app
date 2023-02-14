@@ -26,14 +26,13 @@ fun HomePost(
     modifier: Modifier = Modifier
 ) {
     val isExpanded = remember { mutableStateOf(false)}
-    val height = if (isExpanded.value) modifier.fillMaxSize() else modifier.height(216.dp)
+    val height = if (isExpanded.value || imagePost.isNullOrEmpty()) modifier.fillMaxSize() else modifier.height(216.dp)
 
     Card(
         onClick = { isExpanded.value = !isExpanded.value },
         shape = RoundedCornerShape(18.dp),
         modifier = height,
         backgroundColor = MaterialTheme.colors.primary,
-        elevation = 6.dp
     ) {
         Column(
             modifier = Modifier

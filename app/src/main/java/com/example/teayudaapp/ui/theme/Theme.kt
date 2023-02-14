@@ -11,6 +11,7 @@ private val BlueBack = Color(0xFF7286D3)
 private val BluePrimary = Color(0xFF8EA7E9)
 private val DeepBlue = Color(0xFF01002E)
 private val SmoothWhite = Color(0xFFFFF2F2)
+//private val InputBlue = Color(0xFF262763)
 
 private val DarkColorPalette = darkColors(
     primary = Purple200,

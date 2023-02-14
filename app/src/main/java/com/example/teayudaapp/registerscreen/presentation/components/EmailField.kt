@@ -17,6 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -57,8 +58,9 @@ fun EmailField(
                 keyboardActions = KeyboardActions( onDone = { keyboardController?.hide() }),
                 placeholder = { Text(
                     text = "email@example.com",
-                    style = MaterialTheme.typography.h3,
-                    color = MaterialTheme.colors.onSecondary) },
+                    style = MaterialTheme.typography.body2,
+                    color = MaterialTheme.colors.onSecondary)
+                              },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Outlined.Email,

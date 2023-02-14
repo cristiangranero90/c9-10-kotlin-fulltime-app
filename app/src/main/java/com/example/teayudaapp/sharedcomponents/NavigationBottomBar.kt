@@ -24,19 +24,19 @@ fun BottomBar(
     BottomNavigation(
         modifier = modifier.height(85.dp),
         backgroundColor = MaterialTheme.colors.primaryVariant,
-        contentColor = MaterialTheme.colors.primary
+        contentColor = MaterialTheme.colors.primary,
     ) {
         IconButton(onClick = { /*TODO*/ }, modifier = Modifier.size(80.dp) ) {
-            Icon(imageVector = Icons.Default.Home, contentDescription = "Go to home", modifier = Modifier.size(40.dp))
+            Icon(imageVector = Icons.Default.Home, contentDescription = "Go to home", modifier = Modifier.size(35.dp))
         }
         IconButton(onClick = { /*TODO*/ }, modifier = Modifier.size(80.dp)) {
-            Icon(painterResource(id = R.drawable.dice_material ), contentDescription = "Go to home", modifier = Modifier.size(30.dp))
+            Icon(painterResource(id = R.drawable.dice_material ), contentDescription = "Go to home", modifier = Modifier.size(28.dp))
         }
         IconButton(onClick = { /*TODO*/ }, modifier = Modifier.size(80.dp)) {
-            Icon(imageVector = Icons.Default.Message, contentDescription = "Go to home", modifier = Modifier.size(40.dp))
+            Icon(imageVector = Icons.Default.Message, contentDescription = "Go to home", modifier = Modifier.size(35.dp))
         }
         IconButton(onClick = { /*TODO*/ } , modifier = Modifier.size(80.dp)) {
-            Icon(imageVector = Icons.Default.Favorite, contentDescription = "Go to home", modifier = Modifier.size(40.dp))
+            Icon(imageVector = Icons.Default.Favorite, contentDescription = "Go to home", modifier = Modifier.size(35.dp))
         }
     }
 }
