@@ -27,7 +27,7 @@ fun HomeTopBar(
     modifier: Modifier = Modifier
 ){
     TopAppBar(
-        modifier = Modifier.height(128.dp),
+        modifier = modifier.height(128.dp),
         backgroundColor = MaterialTheme.colors.primaryVariant,
         title = {
             TextField(

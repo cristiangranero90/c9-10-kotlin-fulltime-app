@@ -1,11 +1,9 @@
 package com.example.teayudaapp.sharedcomponents
 
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
@@ -26,18 +24,38 @@ fun BottomBar(
         backgroundColor = MaterialTheme.colors.primaryVariant,
         contentColor = MaterialTheme.colors.primary,
     ) {
-        IconButton(onClick = { /*TODO*/ }, modifier = Modifier.size(80.dp) ) {
-            Icon(imageVector = Icons.Default.Home, contentDescription = "Go to home", modifier = Modifier.size(35.dp))
-        }
-        IconButton(onClick = { /*TODO*/ }, modifier = Modifier.size(80.dp)) {
-            Icon(painterResource(id = R.drawable.dice_material ), contentDescription = "Go to home", modifier = Modifier.size(28.dp))
-        }
-        IconButton(onClick = { /*TODO*/ }, modifier = Modifier.size(80.dp)) {
-            Icon(imageVector = Icons.Default.Message, contentDescription = "Go to home", modifier = Modifier.size(35.dp))
-        }
-        IconButton(onClick = { /*TODO*/ } , modifier = Modifier.size(80.dp)) {
-            Icon(imageVector = Icons.Default.Favorite, contentDescription = "Go to home", modifier = Modifier.size(35.dp))
-        }
+
+        BottomNavigationItem(
+            selected = true,
+            modifier = Modifier.padding(bottom = 20.dp, start = 15.dp),
+            onClick = { /*TODO*/ },
+            icon = {Icon(imageVector = Icons.Default.Home, contentDescription = "Go to home", modifier = Modifier.size(35.dp))},
+            label = { Text(text = "Home", style = MaterialTheme.typography.body2)}
+        )
+
+        BottomNavigationItem(
+            selected = false,
+            modifier = Modifier.padding(bottom = 20.dp),
+            onClick = { /*TODO*/ },
+            icon = {Icon(painterResource(id = R.drawable.dice_material ), contentDescription = "Go to home", modifier = Modifier.size(28.dp))},
+            label = { Text(text = "Random", style = MaterialTheme.typography.body2)}
+        )
+
+        BottomNavigationItem(
+            selected = false,
+            modifier = Modifier.padding(bottom = 20.dp),
+            onClick = { /*TODO*/ },
+            icon = {Icon(imageVector = Icons.Default.Message, contentDescription = "Go to home", modifier = Modifier.size(35.dp))},
+            label = { Text(text = "Mensajes", style = MaterialTheme.typography.body2)}
+        )
+
+        BottomNavigationItem(
+            selected = false,
+            modifier = Modifier.padding(bottom = 20.dp, end = 15.dp),
+            onClick = { /*TODO*/ },
+            icon = {Icon(imageVector = Icons.Default.Favorite, contentDescription = "Go to home", modifier = Modifier.size(35.dp))},
+            label = { Text(text = "Favoritos", style = MaterialTheme.typography.body2)}
+        )
     }
 }
 
