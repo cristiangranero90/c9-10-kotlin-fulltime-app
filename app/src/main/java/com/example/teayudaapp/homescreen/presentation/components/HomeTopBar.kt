@@ -1,8 +1,6 @@
 package com.example.teayudaapp.homescreen.presentation.components
 
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -61,10 +59,11 @@ fun HomeTopBar(
                 )
             ) },
         navigationIcon = {
+            Spacer(modifier = Modifier.width(10.dp))
             Icon(
                 painterResource(id = com.example.teayudaapp.R.drawable.home_material),
                 contentDescription = "Go to home screen",
-                modifier = Modifier.size(34.dp),
+                modifier = Modifier.size(30.dp),
                 tint = MaterialTheme.colors.primary)
                          },
         actions = {

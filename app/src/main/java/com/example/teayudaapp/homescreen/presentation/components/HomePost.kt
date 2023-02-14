@@ -39,7 +39,15 @@ fun HomePost(
                 .padding(vertical = 10.dp, horizontal = 5.dp)
                 .fillMaxWidth()
         ) {
-            if(imagePost !=  null){
+            //Post data
+            Box() {
+
+            }
+
+
+
+
+            if(imagePost.isNullOrBlank().not()){
                 Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
                     AsyncImage(
                         model = imagePost,
