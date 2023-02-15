@@ -8,8 +8,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import com.example.teayudaapp.homescreen.presentation.HomeScreen
-import com.example.teayudaapp.registerscreen.presentation.RegisterScreen
-import com.example.teayudaapp.sharedcomponents.Navigation
+import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
 import com.example.teayudaapp.ui.theme.TEAyudaAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -29,8 +28,9 @@ class MainActivity : ComponentActivity() {
                     //TODO: Create the Navigation Structure, from "navigation compose"
 
                     //RegisterScreen()
-                    HomeScreen()
+                    //HomeScreen()
                     //Navigation()
+                    CreatePost()
                 }
             }
         }

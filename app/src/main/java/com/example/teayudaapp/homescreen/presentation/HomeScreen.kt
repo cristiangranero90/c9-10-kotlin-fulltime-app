@@ -19,6 +19,7 @@ import com.example.teayudaapp.homescreen.presentation.components.HomePost
 import com.example.teayudaapp.sharedcomponents.BottomBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeTopBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeViewList
+import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
 import java.time.LocalDate
 
 @Composable
@@ -26,6 +27,7 @@ fun HomeScreen(){
 
     val scaffoldState = rememberScaffoldState()
     val searchText = remember { mutableStateOf("") }
+    val createPost = remember { mutableStateOf(false) }
 
     Scaffold(
         scaffoldState = scaffoldState,
@@ -33,7 +35,7 @@ fun HomeScreen(){
         bottomBar = { BottomBar() },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /*TODO*/ },
+                onClick = { createPost.value = !createPost.value },
                 elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 0.dp, pressedElevation = 2.dp),
                 backgroundColor = MaterialTheme.colors.primary,
                 modifier = Modifier
@@ -95,7 +97,7 @@ fun HomeScreen(){
                 item {
                     HomePost(
                         textPost = "Something to show",
-                        imagePost = "https://via.placeholder.com/600 ",
+                        imagePost = null,
                         voteUpCount = 1,
                         voteDownCount = 1,
                         favouritePost = true,

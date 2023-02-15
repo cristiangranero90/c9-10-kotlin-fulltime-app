@@ -72,6 +72,7 @@ fun HomeTopBar(
                 contentDescription = "Profile side",
                 tint = MaterialTheme.colors.primary,
                 modifier = Modifier.size(39.dp))
+            Spacer(modifier = Modifier.size(5.dp))
         }
     )
 }
