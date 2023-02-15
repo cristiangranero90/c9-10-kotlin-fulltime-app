@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -37,17 +38,14 @@ fun HomePostTopData(
         Row(modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 8.dp),
-            verticalAlignment = Alignment
-                .CenterVertically,
+            verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween)
         {
             //Image view
-
             Box(modifier = Modifier, contentAlignment = Alignment.Center){
                 Row(modifier = Modifier,
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center) {
-
 
                         AsyncImage(
                             model = imageUrl,
@@ -63,12 +61,23 @@ fun HomePostTopData(
                         horizontalAlignment = Alignment.Start,
                         modifier = Modifier.padding(start = 8.dp))
                     {
-                        Text(text = name, style = MaterialTheme.typography.body2, fontSize = 8.sp, color = inputColor)
-                        Text(text = date.toString(), style = MaterialTheme.typography.body2, fontSize = 8.sp, color = inputColor)
+                        Text(text = name,
+                            style = MaterialTheme.typography.body2,
+                            fontSize = 8.sp,
+                            color = inputColor,
+                            fontWeight = FontWeight.Bold)
+                        Text(text = date.toString(),
+                            style = MaterialTheme.typography.body2,
+                            fontSize = 8.sp,
+                            color = inputColor)
                     }
                 }
             }
-            Text(text = hashtag, style = MaterialTheme.typography.body2, fontSize = 8.sp, color = inputColor)
+            Text(text = hashtag,
+                style = MaterialTheme.typography.body2,
+                fontSize = 8.sp,
+                color = inputColor,
+                fontWeight = FontWeight.Bold)
         }
     }
 }

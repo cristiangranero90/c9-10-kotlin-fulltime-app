@@ -19,6 +19,7 @@ import com.example.teayudaapp.homescreen.presentation.components.HomePost
 import com.example.teayudaapp.sharedcomponents.BottomBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeTopBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeViewList
+import java.time.LocalDate
 
 @Composable
 fun HomeScreen(){
@@ -73,15 +74,11 @@ fun HomeScreen(){
                         imagePost = "https://via.placeholder.com/600 ",
                         voteUpCount = 1,
                         voteDownCount = 1,
-                        favouritePost = true)
-                }
-                item {
-                    HomePost(
-                        textPost = "Something to show\n jsdioadadoijoijeononsd\n iosiduoaisdnmaowenui",
-                        imagePost = null,
-                        voteUpCount = 1,
-                        voteDownCount = 1,
-                        favouritePost = false)
+                        favouritePost = false,
+                        datePost = LocalDate.now(),
+                        imageUser = null,
+                        userName = "Some one",
+                        hashTag = "#Go go")
                 }
                 item {
                     HomePost(
@@ -89,7 +86,11 @@ fun HomeScreen(){
                         imagePost = "https://via.placeholder.com/600 ",
                         voteUpCount = 1,
                         voteDownCount = 1,
-                        favouritePost = false)
+                        favouritePost = false,
+                        datePost = LocalDate.now(),
+                        imageUser = null,
+                        userName = "Some one",
+                        hashTag = "#Go go")
                 }
                 item {
                     HomePost(
@@ -97,7 +98,11 @@ fun HomeScreen(){
                         imagePost = "https://via.placeholder.com/600 ",
                         voteUpCount = 1,
                         voteDownCount = 1,
-                        favouritePost = true)
+                        favouritePost = true,
+                        datePost = LocalDate.now(),
+                        imageUser = null,
+                        userName = "Some one",
+                        hashTag = "#Go go")
                 }
                 item {
                     HomePost(
@@ -105,7 +110,23 @@ fun HomeScreen(){
                         imagePost = "https://via.placeholder.com/600 ",
                         voteUpCount = 1,
                         voteDownCount = 1,
-                        favouritePost = true)
+                        favouritePost = true,
+                        datePost = LocalDate.now(),
+                        imageUser = null,
+                        userName = "Some one",
+                        hashTag = "#Go go")
+                }
+                item {
+                    HomePost(
+                        textPost = "Something to show",
+                        imagePost = "https://via.placeholder.com/600 ",
+                        voteUpCount = 1,
+                        voteDownCount = 1,
+                        favouritePost = false,
+                        datePost = LocalDate.now(),
+                        imageUser = null,
+                        userName = "Some one",
+                        hashTag = "#Go go")
                 }
             }
         }

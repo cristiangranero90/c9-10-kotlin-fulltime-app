@@ -1,9 +1,6 @@
 package com.example.teayudaapp.homescreen.presentation.components
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -12,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 
 @Composable
@@ -31,7 +29,12 @@ fun HomePostData(
             }
         }
     }
-    Text(text = textOfPost, style = MaterialTheme.typography.caption, fontWeight = FontWeight.Bold )
+    //Spacer(modifier = Modifier.height(10.dp))
+    Text(text = textOfPost,
+        style = MaterialTheme.typography.caption,
+        fontWeight = FontWeight.Bold,
+        color = MaterialTheme.colors.onSecondary
+    )
 }
 
 @Composable
