@@ -8,14 +8,17 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.teayudaapp.postcreationscreen.presentation.components.CreatePostTopBar
 import com.example.teayudaapp.postcreationscreen.presentation.components.PostField
 
 
 @Composable
 fun CreatePost(
+    navController: NavController,
     modifier: Modifier = Modifier,
 ) {
     val tittleText = remember {
@@ -29,13 +32,11 @@ fun CreatePost(
     }
     val scaffoldState = rememberScaffoldState()
 
-
-
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         scaffoldState = scaffoldState,
         backgroundColor = MaterialTheme.colors.primary,
-        topBar = { CreatePostTopBar() }
+        topBar = { CreatePostTopBar( { navController.navigateUp() } ) }
 
     ) { paddingValues ->
 
@@ -43,7 +44,7 @@ fun CreatePost(
             modifier = modifier
                 .fillMaxSize()
                 .padding(top = paddingValues.calculateTopPadding().plus(52.dp), start = 15.dp, end = 15.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
+            verticalArrangement = Arrangement.spacedBy(20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
 
         ) {
@@ -99,5 +100,5 @@ fun CreatePost(
 @Composable
 @Preview(showSystemUi = true, showBackground = true)
 fun CreatePostPreview() {
-    CreatePost()
+    CreatePost(navController = NavController(LocalContext.current))
 }

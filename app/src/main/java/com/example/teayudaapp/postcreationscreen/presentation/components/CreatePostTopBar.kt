@@ -16,6 +16,7 @@ import com.example.teayudaapp.R
 
 @Composable
 fun CreatePostTopBar(
+    buttonClose: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     TopAppBar(
@@ -57,5 +58,5 @@ fun CreatePostTopBar(
 @Composable
 @Preview(showBackground = true)
 fun CreatePostTopBarPreview() {
-    CreatePostTopBar()
+    CreatePostTopBar({})
 }
