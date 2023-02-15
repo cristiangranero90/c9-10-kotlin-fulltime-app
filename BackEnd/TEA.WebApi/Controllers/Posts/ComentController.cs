@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Xml.Linq;
+using TEA.Models.DTOs.Posts;
 using TEA.Models.Entities;
 using TEA.Services;
 
@@ -41,11 +43,16 @@ namespace TEA.WebApi.Controllers.Posts
         }
 
         [HttpPost]
-        public ActionResult PostComent(Coment coment)
+        public ActionResult PostComent(ComentDTO coment)
         {
-            var result = Repository.Create(coment);
+            var comentCreated = (Coment)coment;
+            comentCreated.CreateDate = DateTime.Now;
+            var result = Repository.Create(comentCreated);
             if (result != null)
             {
+                var postChanged = Repository.Get<Post>(x => x.Id == coment.PostId);
+                postChanged.Coments++;
+                Repository.Update(postChanged);
                 return Ok("Comentario creado");
             }
             else
@@ -53,14 +60,23 @@ namespace TEA.WebApi.Controllers.Posts
                 return BadRequest();
             }
         }
-        [HttpPost]
+        [HttpPost("DeleteComent")]
         public ActionResult<bool> DeleteComent(int Id)
         {
-            if (!(Id > 0))
+            if (Id > 0)
             {
-                return BadRequest();
+                var postId = Repository.Get<Coment>(x => x.Id == Id).PostId;
+                var result = Repository.Delete(Id);
+                if (result)
+                {
+                    var postChanged = Repository.Get<Post>(x => x.Id == postId);
+                    postChanged.Coments--;
+                    Repository.Update(postChanged);
+                    return Ok("Comentario eliminado");
+                }
             }
-            return Repository.Delete(Id);
+            
+            return BadRequest();
         }
     }
 }

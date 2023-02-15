@@ -16,9 +16,8 @@ namespace TEA.Models.Entities
         public string MessageContent { get; set; }
 
         [Required]
-        public int SenderUserId { get; set; }
+        public string SenderUser { get; set; }
 
-
-        public int RecipientUserId { get; set; }
+        public string RecipientUser { get; set; }
     }
 }

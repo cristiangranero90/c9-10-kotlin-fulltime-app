@@ -33,5 +33,7 @@ namespace TEA.Models.Entities
 
         [StringLength(450)]
         public string AspUserId { get; set; }
+
+        public string SignalUser { get; set; }
     }
 }

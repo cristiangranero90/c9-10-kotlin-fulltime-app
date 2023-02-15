@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TEA.Models.DTOs.Friendships;
@@ -19,7 +19,7 @@ namespace TEA.WebApi.Controllers.Users
             Repository = repository;
         }
 
-        [HttpPost]
+        [HttpPost("SendFriendshipRequest")]
         public ActionResult SendFriendshipRequest(FriendshipDTO friendship)
         {
             if (!ModelState.IsValid)
@@ -33,7 +33,7 @@ namespace TEA.WebApi.Controllers.Users
 
             return BadRequest();
         }
-        [HttpPost]
+        [HttpPost("ResponseFriendshipRequest")]
         public ActionResult ReciveFriendshipRequest(FriendshipDTO friendship)
         {
             if (!ModelState.IsValid)
