@@ -30,7 +30,6 @@ class MainActivity : ComponentActivity() {
                     //RegisterScreen()
                     //HomeScreen()
                     //Navigation()
-                    CreatePost()
                 }
             }
         }
