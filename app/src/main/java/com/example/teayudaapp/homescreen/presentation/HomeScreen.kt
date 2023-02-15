@@ -72,35 +72,40 @@ fun HomeScreen(){
                         textPost = "Something to show",
                         imagePost = "https://via.placeholder.com/600 ",
                         voteUpCount = 1,
-                        voteDownCount = 1)
+                        voteDownCount = 1,
+                        favouritePost = true)
                 }
                 item {
                     HomePost(
                         textPost = "Something to show\n jsdioadadoijoijeononsd\n iosiduoaisdnmaowenui",
                         imagePost = null,
                         voteUpCount = 1,
-                        voteDownCount = 1)
+                        voteDownCount = 1,
+                        favouritePost = false)
                 }
                 item {
                     HomePost(
                         textPost = "Something to show",
                         imagePost = "https://via.placeholder.com/600 ",
                         voteUpCount = 1,
-                        voteDownCount = 1)
+                        voteDownCount = 1,
+                        favouritePost = false)
                 }
                 item {
                     HomePost(
                         textPost = "Something to show",
                         imagePost = "https://via.placeholder.com/600 ",
                         voteUpCount = 1,
-                        voteDownCount = 1)
+                        voteDownCount = 1,
+                        favouritePost = true)
                 }
                 item {
                     HomePost(
                         textPost = "Something to show",
                         imagePost = "https://via.placeholder.com/600 ",
                         voteUpCount = 1,
-                        voteDownCount = 1)
+                        voteDownCount = 1,
+                        favouritePost = true)
                 }
             }
         }
