@@ -24,6 +24,7 @@ import java.time.LocalDate
 
 @Composable
 fun HomeScreen(
+    bottomNav: @Composable () -> Unit,
     goCreatePost: () -> Unit,
 ){
 
@@ -34,7 +35,7 @@ fun HomeScreen(
     Scaffold(
         scaffoldState = scaffoldState,
         modifier = Modifier.fillMaxSize(),
-        bottomBar = { BottomBar() },
+        bottomBar = {bottomNav()},
         floatingActionButton = {
             FloatingActionButton(
                 onClick = goCreatePost,
@@ -140,5 +141,5 @@ fun HomeScreen(
 @Composable
 @Preview
 fun HomeScreenPreview() {
-    HomeScreen({})
+    HomeScreen({}, {})
 }

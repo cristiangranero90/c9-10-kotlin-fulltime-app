@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import com.example.teayudaapp.favouritesscreen.FavouritesScreen
 import com.example.teayudaapp.homescreen.presentation.HomeScreen
 import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
 import com.example.teayudaapp.sharedcomponents.Navigation
@@ -30,6 +31,7 @@ class MainActivity : ComponentActivity() {
 
                     //RegisterScreen()
                     //HomeScreen()
+                    //FavouritesScreen()
                     Navigation()
                 }
             }
