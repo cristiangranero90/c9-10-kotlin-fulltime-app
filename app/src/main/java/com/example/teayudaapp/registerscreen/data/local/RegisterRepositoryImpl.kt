@@ -7,12 +7,12 @@ import javax.inject.Inject
 class RegisterRepositoryImpl @Inject constructor(
     private val localDataSource: UserDao
 ): RegisterRepository {
-
-    override suspend fun getUsers(): Result<MutableList<UserRegister>> {
+    override suspend fun getAllUsers(): MutableList<UserRegister> {
         return localDataSource.getAllUsers()
     }
 
-    override suspend fun insertUser(toInsert: UserRegister) {
-        localDataSource.postUser(toInsert)
+    override suspend fun insertUser(user: UserRegister) {
+        localDataSource.postUser(user)
     }
+
 }

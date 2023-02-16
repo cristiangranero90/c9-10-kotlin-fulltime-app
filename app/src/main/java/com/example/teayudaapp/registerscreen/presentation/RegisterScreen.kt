@@ -1,6 +1,7 @@
 package com.example.teayudaapp.registerscreen.presentation
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -8,8 +9,10 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.teayudaapp.R
 import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 import com.example.teayudaapp.registerscreen.presentation.components.*
@@ -17,18 +20,19 @@ import com.example.teayudaapp.registerscreen.presentation.components.*
 
 @Composable
 fun RegisterScreen(
+    loginSuccess: () -> Unit,
+    viewModel: RegisterScreenViewModel = hiltViewModel(),
     modifier: Modifier = Modifier,
 ){
-    val emailText = remember { mutableStateOf("") }
-    val passwordText = remember { mutableStateOf("") }
-    val loginScreen = remember { mutableStateOf(true) }
+    val homeState = viewModel.state
+    val context = LocalContext.current
     val largeSpacer = 21.67.dp
     val smallSpacer = 11.dp
-    val colorsBackground = if (loginScreen.value) MaterialTheme.colors.primary else MaterialTheme.colors.background
-    val colorsButton = if (loginScreen.value) MaterialTheme.colors.background else MaterialTheme.colors.primary
+    val colorsBackground = if (viewModel.state.loginScreen) MaterialTheme.colors.primary else MaterialTheme.colors.background
+    val colorsButton = if (viewModel.state.loginScreen) MaterialTheme.colors.background else MaterialTheme.colors.primary
     val padding = 6.dp
     //Mutable data of strings needed in the whole screen
-    val dataString = if (loginScreen.value) SharedStringsResources(
+    val dataString = if (viewModel.state.loginScreen) SharedStringsResources(
         emailId = R.string.login_email,
         passwordId = R.string.login_password,
         termsOrForgottenId = R.string.forgotten_password,
@@ -39,6 +43,26 @@ fun RegisterScreen(
         termsOrForgottenId = R.string.app_terms,
         registerButton = R.string.button_register)
 
+    LaunchedEffect(key1 = homeState.registerSuccess){
+        if (homeState.registerSuccess && !homeState.isLoginYet) {
+            Toast.makeText(context, "Usuario registrado con exito", Toast.LENGTH_SHORT).show()
+            viewModel.changeRegister()
+        }
+        viewModel.changeRegister()
+    }
+    LaunchedEffect(key1 = homeState.onFailure){
+        if (homeState.onFailure && !homeState.isLoginYet) {
+            Toast.makeText(context, "Ha ocurrido un error", Toast.LENGTH_SHORT).show()
+            viewModel.changeError()
+        }
+        viewModel.changeError()
+    }
+    if (homeState.isLoginYet) {
+        viewModel.changeLogin()
+        Toast.makeText(context, "Inicio de sesion exitoso", Toast.LENGTH_SHORT).show()
+        loginSuccess()
+    }
+
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -48,26 +72,25 @@ fun RegisterScreen(
     ) {
 
         item {
-            TittleView(loginScreen.value, colorsBackground)
+            TittleView(viewModel.state.loginScreen, colorsBackground)
         }
         item {
-            RegisterLoginButtons(padding, loginScreen.value) { buttonClicked ->
-                loginScreen.value = buttonClicked
+            RegisterLoginButtons(padding, viewModel.state.loginScreen) {
+                viewModel.loginScreenSwitcher(it)
             }
             Spacer(modifier = Modifier.height(smallSpacer))
         }
 
         item {
-            EmailField(emailText, padding, dataString, colorsButton)
+            EmailField(homeState.emailText, { viewModel.onValueEmailChange(it) }, padding, dataString, colorsButton)
             Spacer(modifier = Modifier.height(largeSpacer))
         }
 
         item {
-            PasswordField(passwordText, padding, dataString, colorsButton)
+            PasswordField(homeState.passwordText, { viewModel.onValuePasswordChange(it)}, padding, dataString, colorsButton)
         }
-
         item {
-            if (!loginScreen.value){
+            if (!homeState.loginScreen){
                 Spacer(modifier = Modifier.height(largeSpacer))
                 RadioButtonAgree(padding)
                 Spacer(modifier = Modifier.height(largeSpacer))
@@ -77,9 +100,8 @@ fun RegisterScreen(
                 Spacer(modifier = Modifier.height(largeSpacer))
             }
         }
-
         item {
-            ButtonContinue()
+            ButtonContinue { viewModel.onButtonContinuePressed() }
             Spacer(modifier = Modifier.height(largeSpacer))
         }
 
@@ -106,5 +128,5 @@ fun RegisterScreen(
 @Composable
 @Preview(showBackground = true, showSystemUi = true, uiMode = UI_MODE_NIGHT_NO)
 fun RegisterScreenPreview() {
-    RegisterScreen()
+    RegisterScreen({})
 }

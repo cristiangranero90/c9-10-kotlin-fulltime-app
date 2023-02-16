@@ -7,7 +7,6 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Email
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
@@ -17,13 +16,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun EmailField(
-    emailText: MutableState<String>,
+    emailText: String,
+    onValueChange: (String) -> Unit,
     paddingValues: Dp,
     dataString: SharedStringsResources,
     colors: Color,
@@ -49,8 +48,8 @@ fun EmailField(
 
             TextField(
                 modifier = Modifier.fillMaxWidth(),
-                value = emailText.value,
-                onValueChange = { emailText.value = it },
+                value = emailText,
+                onValueChange = { onValueChange(it) },
                 shape = MaterialTheme.shapes.large,
                 maxLines = 1,
                 singleLine = true,

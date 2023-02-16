@@ -22,7 +22,7 @@ import kotlinx.coroutines.*
 
 @Composable
 fun SplashScreen(
-    navController: NavHostController
+    navigate: () -> Unit,
 ) {
 
     var loading by remember { mutableStateOf(true) }
@@ -49,7 +49,7 @@ fun SplashScreen(
         if (loading){
             AnimatedDots()
         } else {
-            navController.navigate("register_screen")
+            navigate()
         }
         LaunchedEffect(loading){
             if (loading){

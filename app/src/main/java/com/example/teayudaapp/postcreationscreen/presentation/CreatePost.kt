@@ -18,7 +18,7 @@ import com.example.teayudaapp.postcreationscreen.presentation.components.PostFie
 
 @Composable
 fun CreatePost(
-    navController: NavController,
+    close: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val tittleText = remember {
@@ -36,14 +36,18 @@ fun CreatePost(
         modifier = Modifier.fillMaxSize(),
         scaffoldState = scaffoldState,
         backgroundColor = MaterialTheme.colors.primary,
-        topBar = { CreatePostTopBar( { navController.navigateUp() } ) }
+        topBar = { CreatePostTopBar( close ) }
 
     ) { paddingValues ->
 
         LazyColumn(
             modifier = modifier
                 .fillMaxSize()
-                .padding(top = paddingValues.calculateTopPadding().plus(52.dp), start = 15.dp, end = 15.dp),
+                .padding(
+                    top = paddingValues
+                        .calculateTopPadding()
+                        .plus(52.dp), start = 15.dp, end = 15.dp
+                ),
             verticalArrangement = Arrangement.spacedBy(20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
 
@@ -100,5 +104,5 @@ fun CreatePost(
 @Composable
 @Preview(showSystemUi = true, showBackground = true)
 fun CreatePostPreview() {
-    CreatePost(navController = NavController(LocalContext.current))
+    CreatePost({ } )
 }

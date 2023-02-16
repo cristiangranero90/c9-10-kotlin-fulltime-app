@@ -11,15 +11,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ButtonContinue() {
+fun ButtonContinue(
+    onClick: () -> Unit,
+) {
+
     Button(
         modifier = Modifier
             .width(282.dp)
             .height(45.dp),
-        onClick = { /*TODO*/ },
+        onClick = onClick,
         shape = MaterialTheme.shapes.large,
-        colors = ButtonDefaults.buttonColors(
-            backgroundColor = Color(0xFFE5E0FF)
+        colors = ButtonDefaults
+            .buttonColors(backgroundColor = Color(0xFFE5E0FF)
         )
     ) {
         Text(

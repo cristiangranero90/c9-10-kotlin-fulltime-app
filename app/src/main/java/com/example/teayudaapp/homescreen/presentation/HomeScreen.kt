@@ -23,7 +23,9 @@ import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
 import java.time.LocalDate
 
 @Composable
-fun HomeScreen(){
+fun HomeScreen(
+    goCreatePost: () -> Unit,
+){
 
     val scaffoldState = rememberScaffoldState()
     val searchText = remember { mutableStateOf("") }
@@ -35,7 +37,7 @@ fun HomeScreen(){
         bottomBar = { BottomBar() },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { createPost.value = !createPost.value },
+                onClick = goCreatePost,
                 elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 0.dp, pressedElevation = 2.dp),
                 backgroundColor = MaterialTheme.colors.primary,
                 modifier = Modifier
@@ -138,5 +140,5 @@ fun HomeScreen(){
 @Composable
 @Preview
 fun HomeScreenPreview() {
-    HomeScreen()
+    HomeScreen({})
 }

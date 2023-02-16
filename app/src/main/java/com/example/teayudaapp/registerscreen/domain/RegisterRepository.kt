@@ -4,7 +4,7 @@ import com.example.teayudaapp.registerscreen.data.local.UserRegister
 
 interface RegisterRepository {
 
-    suspend fun getUsers(): Result<MutableList<UserRegister>>
+    suspend fun getAllUsers() : MutableList<UserRegister>
 
     suspend fun insertUser(toInsert: UserRegister)
 

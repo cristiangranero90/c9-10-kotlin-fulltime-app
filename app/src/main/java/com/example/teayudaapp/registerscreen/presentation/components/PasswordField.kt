@@ -9,7 +9,6 @@ import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -23,13 +22,13 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun PasswordField(
-    passwordText: MutableState<String>,
+    passwordText: String,
+    onValueChange: (String) -> Unit,
     paddingValues: Dp,
     dataString: SharedStringsResources,
     colors: Color,
@@ -59,8 +58,8 @@ fun PasswordField(
             )
             TextField(
                 modifier = Modifier.fillMaxWidth(),
-                value = passwordText.value,
-                onValueChange = { passwordText.value = it },
+                value = passwordText,
+                onValueChange = { onValueChange(it) },
                 shape = MaterialTheme.shapes.large,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                 visualTransformation = transformation,

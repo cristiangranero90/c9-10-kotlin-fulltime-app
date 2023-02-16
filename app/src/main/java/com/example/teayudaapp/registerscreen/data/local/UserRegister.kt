@@ -6,8 +6,6 @@ import java.time.LocalDate
 
 @Entity(tableName = "users")
 data class UserRegister(
-    @PrimaryKey(autoGenerate = true)
-    val id: Long,
     val email: String,
     val password: String,
     val name: String,
@@ -15,5 +13,7 @@ data class UserRegister(
     val imageUrl: String?,
     val profileDescription: String?,
     val gender: String?,
-    val createDate: LocalDate
+    val createDate: String,
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
 )

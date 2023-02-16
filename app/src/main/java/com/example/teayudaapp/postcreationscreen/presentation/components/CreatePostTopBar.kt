@@ -42,7 +42,7 @@ fun CreatePostTopBar(
                 tint = MaterialTheme.colors.primary)
         },
         actions = {
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(onClick = buttonClose) {
                 Icon(
                     imageVector = Icons.Default.Close,
                     contentDescription = "Profile side",

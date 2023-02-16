@@ -25,6 +25,6 @@ object DataSourceModule {
 
     @Provides
     @Singleton
-    fun movieDao(db: DbDataSource) : UserDao = db.userRegisterDao()
+    fun userDao(db: DbDataSource) : UserDao = db.userDao()
 
 }

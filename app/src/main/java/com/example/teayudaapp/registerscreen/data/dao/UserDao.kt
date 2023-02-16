@@ -10,8 +10,9 @@ import com.example.teayudaapp.registerscreen.data.local.UserRegister
 interface UserDao {
 
     @Query("SELECT * FROM users")
-    suspend fun getAllUsers(): Result<MutableList<UserRegister>>
-
+    suspend fun getAllUsers() : MutableList<UserRegister>
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun postUser(user: UserRegister)
+
+
 }
