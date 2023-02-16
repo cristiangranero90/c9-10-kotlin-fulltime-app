@@ -22,7 +22,7 @@ builder.Services.AddScoped<IRepository>((ServiceProvider) => DalFactory.GetRepos
 //Jwt Services
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TestConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(
     options => 
     options.SignIn.RequireConfirmedAccount = false)

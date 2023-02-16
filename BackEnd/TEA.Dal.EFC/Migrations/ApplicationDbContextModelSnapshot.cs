@@ -302,11 +302,13 @@ namespace TEA.Dal.EFC.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RecipientUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("RecipientUser")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SenderUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("SenderUser")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -460,6 +462,10 @@ namespace TEA.Dal.EFC.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProfileDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SignalUser")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
