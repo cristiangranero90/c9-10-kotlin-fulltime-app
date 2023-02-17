@@ -20,7 +20,6 @@ fun NoFavouritesAdded(
     Box(
         modifier = Modifier
             .fillMaxSize(),
-        contentAlignment = Alignment.Center
     ) {
         Column(
             modifier = Modifier
@@ -44,7 +43,7 @@ fun NoFavouritesAdded(
 }
 
 @Composable
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 fun NoFavouritesAddedPreview() {
     NoFavouritesAdded()
 }

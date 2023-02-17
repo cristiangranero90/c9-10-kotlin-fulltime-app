@@ -58,7 +58,9 @@ fun CreatePost(
                     mutableText = tittleText,
                     title = "Titulo",
                     placeholderString = "Ej: Aeropuerto cerrado",
-                    height = 49.dp
+                    height = 49.dp,
+                    1,
+                    true,
                 )
             }
             item {
@@ -67,7 +69,9 @@ fun CreatePost(
                     mutableText = descriptionText,
                     title = "Descipcion",
                     placeholderString = "Puede escribir hasta 255 caracteres",
-                    height = 173.dp
+                    height = 173.dp,
+                    255,
+                    false,
                 )
             }
             item {
@@ -76,7 +80,9 @@ fun CreatePost(
                     mutableText = hashtagText,
                     title = "Hashtag",
                     placeholderString = "#Aeropuertocerrado",
-                    height = 49.dp
+                    height = 49.dp,
+                    1,
+                    true,
                 )
             }
             item {

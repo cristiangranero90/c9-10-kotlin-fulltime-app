@@ -25,6 +25,8 @@ fun PostField(
     title: String,
     placeholderString: String,
     height: Dp,
+    maxLines: Int,
+    singleLine: Boolean,
     modifier: Modifier = Modifier
 ) {
     Box(modifier = modifier){
@@ -42,7 +44,8 @@ fun PostField(
                     .fillMaxWidth()
                     .height(height),
                 shape = MaterialTheme.shapes.large,
-                maxLines = 1,
+                maxLines = maxLines,
+                singleLine = singleLine,
                 textStyle = MaterialTheme.typography.body2,
                 placeholder = {
                     Text(
@@ -66,5 +69,5 @@ fun PostField(
 fun PostFieldPreview() {
     PostField(remember {
         mutableStateOf("")
-    }, "Description", "Ej: Something", 49.dp)
+    }, "Description", "Ej: Something", 49.dp, 10, true)
 }
