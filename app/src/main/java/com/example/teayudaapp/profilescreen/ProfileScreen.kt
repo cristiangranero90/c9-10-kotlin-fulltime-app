@@ -8,16 +8,20 @@ import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.teayudaapp.profilescreen.components.ProfileImage
 import com.example.teayudaapp.profilescreen.components.ProfileTopBar
 
 @Composable
-fun ProfileScreen(){
+fun ProfileScreen(
+    bottomNav: @Composable () -> Unit
+) {
 
     val scaffoldState = rememberScaffoldState()
     
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = { ProfileTopBar(buttonEdit = { /*TODO*/ } )},
+        bottomBar = bottomNav,
         scaffoldState = scaffoldState
 
     ) { paddingValues ->
@@ -27,7 +31,9 @@ fun ProfileScreen(){
                 .fillMaxSize()
                 .padding(paddingValues)
         ){
-
+            item {
+                ProfileImage(name = "Profile Name", imageUrl = "https://via.placeholder.com/1000")
+            }
         }
     }
 
@@ -39,5 +45,5 @@ fun ProfileScreen(){
 @Composable
 @Preview(showBackground = true, showSystemUi = true, name = "profile_screen")
 fun ProfileScreenPreview(){
-    ProfileScreen()
+    ProfileScreen({ })
 }

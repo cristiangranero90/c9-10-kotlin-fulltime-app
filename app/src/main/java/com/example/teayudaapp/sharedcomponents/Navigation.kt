@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.teayudaapp.favouritesscreen.FavouritesScreen
 import com.example.teayudaapp.homescreen.presentation.HomeScreen
 import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
+import com.example.teayudaapp.profilescreen.ProfileScreen
 import com.example.teayudaapp.registerscreen.presentation.RegisterScreen
 import com.example.teayudaapp.splashscreen.SplashScreen
 
@@ -65,13 +66,20 @@ fun Navigation(){
             RegisterScreen( { navController.navigate("home_screen")} )
         }
         composable("home_screen"){
-            HomeScreen( bottomNav , { navController.navigate("create-post_screen") })
+            HomeScreen(
+                bottomNav ,
+                { navController.navigate("profile_screen") },
+                { navController.navigate("create-post_screen") }
+            )
         }
         composable("create-post_screen"){
             CreatePost( { navController.navigateUp() })
         }
         composable("favourites_screen"){
             FavouritesScreen(bottomNav)
+        }
+        composable("profile_screen"){
+            ProfileScreen(bottomNav)
         }
     }
 

@@ -1,5 +1,7 @@
 package com.example.teayudaapp.homescreen.presentation.components
 
+import android.service.autofill.OnClickAction
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
@@ -23,6 +25,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun HomeTopBar(
+    onClick: () -> Unit,
     searchText: MutableState<String>,
     modifier: Modifier = Modifier
 ){
@@ -67,11 +70,13 @@ fun HomeTopBar(
                 tint = MaterialTheme.colors.primary)
                          },
         actions = {
+
+
             Icon(
                 imageVector = Icons.Default.Person,
                 contentDescription = "Profile side",
                 tint = MaterialTheme.colors.primary,
-                modifier = Modifier.size(39.dp))
+                modifier = Modifier.size(39.dp).clickable { onClick() })
             Spacer(modifier = Modifier.size(5.dp))
         }
     )
@@ -81,5 +86,5 @@ fun HomeTopBar(
 @Preview(showBackground = true)
 fun HomeTopBarPreview(){
     val text = remember { mutableStateOf("Something") }
-    HomeTopBar( text )
+    HomeTopBar( {},text )
 }

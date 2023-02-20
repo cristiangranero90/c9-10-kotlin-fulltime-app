@@ -25,6 +25,7 @@ import java.time.LocalDate
 @Composable
 fun HomeScreen(
     bottomNav: @Composable () -> Unit,
+    profileClicked: () -> Unit,
     goCreatePost: () -> Unit,
 ){
 
@@ -54,7 +55,7 @@ fun HomeScreen(
                    )
             }
         },
-        topBar = { HomeTopBar(searchText) },
+        topBar = { HomeTopBar(profileClicked, searchText) },
         isFloatingActionButtonDocked = true,
         floatingActionButtonPosition = FabPosition.Center
     ){ paddingValues ->
@@ -141,5 +142,5 @@ fun HomeScreen(
 @Composable
 @Preview
 fun HomeScreenPreview() {
-    HomeScreen({}, {})
+    HomeScreen({}, {}, {})
 }
