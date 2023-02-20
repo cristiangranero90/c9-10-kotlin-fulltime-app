@@ -1,20 +1,25 @@
 package com.example.teayudaapp.profilescreen
 
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.teayudaapp.profilescreen.components.ProfileBiography
 import com.example.teayudaapp.profilescreen.components.ProfileImage
+import com.example.teayudaapp.profilescreen.components.ProfilePostView
 import com.example.teayudaapp.profilescreen.components.ProfileTopBar
+import java.time.LocalDate
 
 @Composable
 fun ProfileScreen(
@@ -41,8 +46,9 @@ fun ProfileScreen(
                 .padding(
                     top = paddingValues.calculateTopPadding(),
                     bottom = paddingValues.calculateBottomPadding(),
-                    start = 20.dp, end = 20.dp
-                )
+                    start = 6.dp, end = 6.dp
+                ),
+            verticalArrangement = Arrangement.SpaceBetween
         ){
             item {
                 ProfileImage(name = "Profile Name", imageUrl = "https://via.placeholder.com/1000")
@@ -55,14 +61,34 @@ fun ProfileScreen(
                 )
             }
 
-            items(10){
-
+            item {
+                Text(
+                    text = "Post",
+                    style = MaterialTheme.typography.body1,
+                    color = Color.Black,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+            if(viewModel.state.post.isNotEmpty()){
+                items(viewModel.state.post.size - 1){
+                    ProfilePostView(
+                        userImage = "https://via.placeholder.com/200",
+                        userName = "Post name",
+                        date = LocalDate.now(),
+                        postText = viewModel.state.profileBio,
+                        postImage = "",
+                        hashtag = "Gogo"
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
+                }
+            }
+            else {
+                item {
+                    Text(text = "Aun no creaste ningun post... Intenta crear uno!", style = MaterialTheme.typography.body2)
+                }
             }
         }
     }
-
-
-
 }
 
 

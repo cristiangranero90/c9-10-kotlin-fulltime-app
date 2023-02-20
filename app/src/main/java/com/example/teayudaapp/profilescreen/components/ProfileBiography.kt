@@ -19,10 +19,10 @@ fun ProfileBiography(
     createdDate: LocalDate,
     modifier: Modifier = Modifier
 ) {
-
     Box(
         modifier = modifier
             .fillMaxWidth()
+            .padding(10.dp)
             .border(
                 width = 1.dp,
                 shape = RoundedCornerShape(18f),
