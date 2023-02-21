@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.teayudaapp.homescreen.presentation.components.HomePost
 import com.example.teayudaapp.sharedcomponents.BottomBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeTopBar
@@ -27,11 +28,12 @@ fun HomeScreen(
     bottomNav: @Composable () -> Unit,
     profileClicked: () -> Unit,
     goCreatePost: () -> Unit,
+    viewModel: HomeViewModel = hiltViewModel()
 ){
 
     val scaffoldState = rememberScaffoldState()
-    val searchText = remember { mutableStateOf("") }
-    val createPost = remember { mutableStateOf(false) }
+    val searchText = remember { viewModel.state.searchText }
+    val createPost = remember { viewModel.state.createText }
 
     Scaffold(
         scaffoldState = scaffoldState,
