@@ -1,9 +1,6 @@
-package com.example.teayudaapp.ui.composable.sharedcomponents
+package com.example.teayudaapp.sharedcomponents
 
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.RepeatMode
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -70,7 +67,6 @@ fun AnimatedDots(
             if (index != 0) {
                 Spacer(modifier = Modifier.width(width = 6.dp))
             }
-
             Box(
                 modifier = Modifier
                     .size(size = circleSize)
@@ -80,6 +76,7 @@ fun AnimatedDots(
                             .copy(alpha = animatable.value)
                     )
             ) {
+
             }
         }
     }

@@ -6,5 +6,8 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFFFF</color> #01002E
+    <color name="deep_blue">#FF7286D3</color>
+    <color name="input_blue">#FF01002E</color>
+
 </resources>
