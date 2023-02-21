@@ -45,7 +45,7 @@ fun BottomBar(
             selected = currentDestination?.hierarchy?.any { it.route == "random_screen"} == true,
             modifier = Modifier.padding(bottom = 20.dp),
             onClick = onRandomClicked,
-            icon = {Icon(painterResource(id = R.drawable.dice_material ), contentDescription = "Go to home", modifier = Modifier.size(28.dp))},
+            icon = {Icon(painterResource(id = R.drawable.dice_material ), contentDescription = "Go to random", modifier = Modifier.size(28.dp))},
             label = { Text(text = "Random", style = MaterialTheme.typography.body2)}
         )
 
@@ -53,7 +53,7 @@ fun BottomBar(
             selected = currentDestination?.hierarchy?.any { it.route == "message_screen"} == true,
             modifier = Modifier.padding(bottom = 20.dp),
             onClick = onMessageClicked,
-            icon = {Icon(imageVector = Icons.Default.Message, contentDescription = "Go to home", modifier = Modifier.size(35.dp))},
+            icon = {Icon(imageVector = Icons.Default.Message, contentDescription = "Go to messages", modifier = Modifier.size(35.dp))},
             label = { Text(text = "Mensajes", style = MaterialTheme.typography.body2)}
         )
 
@@ -61,7 +61,7 @@ fun BottomBar(
             selected = currentDestination?.hierarchy?.any { it.route == "favourites_screen"} == true,
             modifier = Modifier.padding(bottom = 20.dp, end = 15.dp),
             onClick = onFavouritesClicked,
-            icon = {Icon(imageVector = Icons.Default.Favorite, contentDescription = "Go to home", modifier = Modifier.size(35.dp))},
+            icon = {Icon(imageVector = Icons.Default.Favorite, contentDescription = "Go to favourites", modifier = Modifier.size(35.dp))},
             label = { Text(text = "Favoritos", style = MaterialTheme.typography.body2)}
         )
     }

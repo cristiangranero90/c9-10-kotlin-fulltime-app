@@ -11,6 +11,7 @@ import com.example.teayudaapp.favouritesscreen.FavouritesScreen
 import com.example.teayudaapp.homescreen.presentation.HomeScreen
 import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
 import com.example.teayudaapp.profilescreen.ProfileScreen
+import com.example.teayudaapp.randomscreen.RandomScreen
 import com.example.teayudaapp.sharedcomponents.Navigation
 import com.example.teayudaapp.ui.theme.TEAyudaAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,6 +36,7 @@ class MainActivity : ComponentActivity() {
                     //FavouritesScreen()
                     Navigation()
                     //ProfileScreen({})
+                    //RandomScreen(profileClicked = { /*TODO*/ }, {})
                 }
             }
         }

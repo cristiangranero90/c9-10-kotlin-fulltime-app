@@ -35,7 +35,7 @@ fun ProfilePostView(
     ){
        Column(
            modifier = Modifier.fillMaxWidth(),
-           verticalArrangement = Arrangement.SpaceBetween,
+           verticalArrangement = Arrangement.SpaceAround,
            horizontalAlignment = Alignment.CenterHorizontally
        ) {
            HomePostTopData(

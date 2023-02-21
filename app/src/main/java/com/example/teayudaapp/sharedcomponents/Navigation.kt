@@ -10,6 +10,7 @@ import com.example.teayudaapp.favouritesscreen.FavouritesScreen
 import com.example.teayudaapp.homescreen.presentation.HomeScreen
 import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
 import com.example.teayudaapp.profilescreen.ProfileScreen
+import com.example.teayudaapp.randomscreen.RandomScreen
 import com.example.teayudaapp.registerscreen.presentation.RegisterScreen
 import com.example.teayudaapp.splashscreen.SplashScreen
 
@@ -80,6 +81,9 @@ fun Navigation(){
         }
         composable("profile_screen"){
             ProfileScreen(bottomNav)
+        }
+        composable("random_screen") {
+            RandomScreen(profileClicked = { navController.navigate("profile_screen") }, bottomNav)
         }
     }
 

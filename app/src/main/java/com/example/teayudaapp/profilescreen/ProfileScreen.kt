@@ -48,7 +48,6 @@ fun ProfileScreen(
                     bottom = paddingValues.calculateBottomPadding(),
                     start = 6.dp, end = 6.dp
                 ),
-            verticalArrangement = Arrangement.SpaceBetween
         ){
             item {
                 ProfileImage(name = "Profile Name", imageUrl = "https://via.placeholder.com/1000")
