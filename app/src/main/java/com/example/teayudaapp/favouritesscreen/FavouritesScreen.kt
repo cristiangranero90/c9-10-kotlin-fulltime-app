@@ -14,6 +14,7 @@ import com.example.teayudaapp.favouritesscreen.components.NoFavouritesAdded
 
 @Composable
 fun FavouritesScreen(
+    buttomProfile: () -> Unit,
     bottomNav: @Composable () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -24,7 +25,7 @@ fun FavouritesScreen(
     Scaffold(
         modifier = Modifier
             .fillMaxSize(),
-        topBar = { FavouritesTopBar(buttonProfile = { /*TODO*/ }) },
+        topBar = { FavouritesTopBar(buttonProfile = { buttomProfile() }) },
         bottomBar = bottomNav,
 
     ) { paddingValues ->
@@ -50,5 +51,5 @@ fun FavouritesScreen(
 @Composable
 @Preview(showBackground = true)
 fun FavouritesScreenPreview() {
-    FavouritesScreen({})
+    FavouritesScreen({}, {})
 }

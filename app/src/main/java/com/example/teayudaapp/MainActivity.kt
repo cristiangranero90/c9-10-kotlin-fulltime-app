@@ -9,6 +9,7 @@ import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import com.example.teayudaapp.favouritesscreen.FavouritesScreen
 import com.example.teayudaapp.homescreen.presentation.HomeScreen
+import com.example.teayudaapp.messagescreen.MessageScreen
 import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
 import com.example.teayudaapp.profilescreen.ProfileScreen
 import com.example.teayudaapp.randomscreen.RandomScreen

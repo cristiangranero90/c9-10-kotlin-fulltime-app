@@ -8,6 +8,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.teayudaapp.favouritesscreen.FavouritesScreen
 import com.example.teayudaapp.homescreen.presentation.HomeScreen
+import com.example.teayudaapp.messagescreen.MessageScreen
 import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
 import com.example.teayudaapp.profilescreen.ProfileScreen
 import com.example.teayudaapp.randomscreen.RandomScreen
@@ -77,13 +78,16 @@ fun Navigation(){
             CreatePost( { navController.navigateUp() })
         }
         composable("favourites_screen"){
-            FavouritesScreen(bottomNav)
+            FavouritesScreen( { navController.navigate("profile_screen") }, bottomNav)
         }
         composable("profile_screen"){
             ProfileScreen(bottomNav)
         }
         composable("random_screen") {
             RandomScreen(profileClicked = { navController.navigate("profile_screen") }, bottomNav)
+        }
+        composable("message_screen") {
+            MessageScreen(bottomBar = bottomNav) { navController.navigateUp() }
         }
     }
 
