@@ -22,7 +22,7 @@ fun MessagesTopBar(
         backgroundColor = MaterialTheme.colors.primaryVariant,
 
         title = {
-            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center){
+            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
                 Text(
                     text = "Mensajes",
                     style = MaterialTheme.typography.body1,
@@ -40,6 +40,7 @@ fun MessagesTopBar(
                     contentDescription = "Go back",
                     tint = MaterialTheme.colors.primary)
             }
-        }
+        },
+        actions = { Box(modifier = Modifier.width(70.dp))}
     )
 }

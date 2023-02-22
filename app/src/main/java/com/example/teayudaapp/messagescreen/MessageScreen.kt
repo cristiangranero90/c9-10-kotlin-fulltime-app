@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.teayudaapp.messagescreen.components.MessageItem
 import com.example.teayudaapp.messagescreen.components.MessagesTopBar
 
 @Composable
@@ -38,11 +39,16 @@ fun MessageScreen(
                     start = 10.dp,
                     end = 10.dp
                 ),
-            verticalArrangement = Arrangement.SpaceEvenly,
+            verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.CenterHorizontally
         ){
             items(10) {
-                Text(text = "Message items")
+                //TODO: Message items from database
+                MessageItem(
+                    profileImageUrl = "https://via.placeholder.com/200",
+                    profileName = "Some name",
+                    messageText = "Some message from the future just read it llkjasljkdklajsdkljsldjksdljsdljklasjkl"
+                )
             }
         }
     }

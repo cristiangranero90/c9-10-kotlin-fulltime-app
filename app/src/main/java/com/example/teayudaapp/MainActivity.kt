@@ -35,9 +35,10 @@ class MainActivity : ComponentActivity() {
                     //RegisterScreen()
                     //HomeScreen()
                     //FavouritesScreen()
-                    Navigation()
+                    //Navigation()
                     //ProfileScreen({})
                     //RandomScreen(profileClicked = { /*TODO*/ }, {})
+                    MessageScreen(bottomBar = { /*TODO*/ }, {})
                 }
             }
         }
