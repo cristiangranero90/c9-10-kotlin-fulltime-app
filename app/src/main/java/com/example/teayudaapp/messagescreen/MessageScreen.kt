@@ -1,9 +1,9 @@
 package com.example.teayudaapp.messagescreen
 
+import androidx.compose.animation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.teayudaapp.messagescreen.components.MessageIndividual
+import com.example.teayudaapp.messagescreen.components.MessageIndividualTopBar
 import com.example.teayudaapp.messagescreen.components.MessageItem
 import com.example.teayudaapp.messagescreen.components.MessagesTopBar
 
@@ -25,18 +26,37 @@ fun MessageScreen(
     val individual = remember {
         mutableStateOf(false)
     }
-
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         scaffoldState = scaffoldState,
         bottomBar = { bottomBar() },
-        topBar = { MessagesTopBar( { onClose() } ) }
+        topBar = {
+            if (individual.value){
+                MessageIndividualTopBar(
+                    profileImage = "https://via.placeholder.com/200",
+                    profileName = "Some name",
+                    onClick = { individual.value = !individual.value })
+            } else{
+                MessagesTopBar( { onClose() } )
+            }
+        }
 
     ) { paddingValues ->
-        if (individual.value){
+
+        AnimatedVisibility(
+            visible = individual.value,
+            modifier = Modifier.fillMaxWidth(),
+            enter = slideInHorizontally() + fadeIn(),
+            exit = slideOutHorizontally() + fadeOut(),
+        ) {
             MessageIndividual(paddingValues = paddingValues)
-            
-        } else{
+        }
+
+        AnimatedVisibility(
+            visible = !individual.value,
+            modifier = Modifier.fillMaxWidth(),
+            enter = slideInHorizontally() + fadeIn(),
+        ) {
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
@@ -59,8 +79,13 @@ fun MessageScreen(
                     )
                     Spacer(modifier = Modifier.height(10.dp))
                 }
-            }             
-        }        
+            }
+        }
+
+
+
+
+
     }
 }
 
