@@ -7,12 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import com.example.teayudaapp.favouritesscreen.FavouritesScreen
-import com.example.teayudaapp.homescreen.presentation.HomeScreen
-import com.example.teayudaapp.messagescreen.MessageScreen
-import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
-import com.example.teayudaapp.profilescreen.ProfileScreen
-import com.example.teayudaapp.randomscreen.RandomScreen
 import com.example.teayudaapp.sharedcomponents.Navigation
 import com.example.teayudaapp.ui.theme.TEAyudaAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,10 +29,11 @@ class MainActivity : ComponentActivity() {
                     //RegisterScreen()
                     //HomeScreen()
                     //FavouritesScreen()
-                    //Navigation()
+                    Navigation()
                     //ProfileScreen({})
                     //RandomScreen(profileClicked = { /*TODO*/ }, {})
-                    MessageScreen(bottomBar = { /*TODO*/ }, {})
+                    //MessageScreen(bottomBar = { /*TODO*/ }, {})
+                    //MessageIndividual(message = "Some message", ownMessage = false)
                 }
             }
         }

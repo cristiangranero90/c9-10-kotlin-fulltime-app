@@ -1,10 +1,10 @@
 package com.example.teayudaapp.messagescreen.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -26,14 +26,17 @@ fun MessageItem(
     profileImageUrl: String,
     profileName: String,
     messageText: String,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier
 ){
 
     Box(
         modifier = modifier
             .fillMaxWidth()
+            .height(53.dp)
             .clip(RoundedCornerShape(27.dp))
-            .background(Color.White),
+            .background(MaterialTheme.colors.primaryVariant)
+            .clickable { onClick() },
         contentAlignment = Alignment.Center
     ){
         Row(
@@ -72,5 +75,5 @@ fun MessageItem(
 @Composable
 @Preview()
 fun MessageItemPreview(){
-    MessageItem("", "No name", "Some messages to see")
+    MessageItem("", "No name", "Some messages to see", {})
 }
