@@ -1,12 +1,18 @@
 package com.example.teayudaapp.registerscreen.presentation.components
 
+import android.graphics.drawable.shapes.Shape
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
@@ -36,7 +42,7 @@ fun RegisterLoginButtons(
                 contentAlignment = Alignment.Center
             ){
                 Icon(
-                    painter = painterResource(id = R.drawable.register_button),
+                    painter = painterResource(id = R.drawable.border_button),
                     contentDescription = "Register side",
                     tint = MaterialTheme.colors.primary,
                     modifier = Modifier.size(width = 80.dp, height = 31.dp)
@@ -53,7 +59,7 @@ fun RegisterLoginButtons(
                 contentAlignment = Alignment.CenterStart
             ){
                 Icon(
-                    painter = painterResource(id = R.drawable.register_button),
+                    painter = painterResource(id = R.drawable.border_button),
                     contentDescription = "Loguin side",
                     tint = MaterialTheme.colors.background,
                     modifier = Modifier

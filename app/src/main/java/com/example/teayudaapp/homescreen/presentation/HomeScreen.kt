@@ -13,6 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -43,7 +44,7 @@ fun HomeScreen(
             FloatingActionButton(
                 onClick = goCreatePost,
                 elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 0.dp, pressedElevation = 2.dp),
-                backgroundColor = MaterialTheme.colors.primary,
+                backgroundColor = Color(0xFF7286D3),
                 modifier = Modifier
                     .border(
                         width = 2.dp,

@@ -64,20 +64,25 @@ fun HomePostTopData(
                         Text(text = name,
                             style = MaterialTheme.typography.body2,
                             fontSize = 8.sp,
-                            color = inputColor,
-                            fontWeight = FontWeight.Bold)
+                            color = MaterialTheme.colors.onSecondary,
+                            fontWeight = FontWeight.Medium
+                        )
                         Text(text = date.toString(),
                             style = MaterialTheme.typography.body2,
                             fontSize = 8.sp,
-                            color = inputColor)
+                            color = Color(0xFF262763),
+                            fontWeight = FontWeight.Medium
+                        )
                     }
                 }
             }
-            Text(text = hashtag,
+            Text(
+                text = hashtag,
                 style = MaterialTheme.typography.body2,
                 fontSize = 8.sp,
-                color = inputColor,
-                fontWeight = FontWeight.Bold)
+                color = MaterialTheme.colors.onSecondary,
+                fontWeight = FontWeight.Medium
+            )
         }
     }
 }

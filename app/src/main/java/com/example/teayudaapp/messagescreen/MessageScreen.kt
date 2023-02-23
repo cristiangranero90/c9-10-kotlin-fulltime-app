@@ -81,11 +81,6 @@ fun MessageScreen(
                 }
             }
         }
-
-
-
-
-
     }
 }
 
