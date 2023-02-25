@@ -3,10 +3,13 @@ package com.example.teayudaapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.example.teayudaapp.messagescreen.components.MessageIndividual
 import com.example.teayudaapp.sharedcomponents.Navigation
 import com.example.teayudaapp.ui.theme.TEAyudaAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,7 +36,7 @@ class MainActivity : ComponentActivity() {
                     //ProfileScreen({})
                     //RandomScreen(profileClicked = { /*TODO*/ }, {})
                     //MessageScreen(bottomBar = { /*TODO*/ }, {})
-                    //MessageIndividual(message = "Some message", ownMessage = false)
+                    //MessageIndividual({},PaddingValues(2.dp))
                 }
             }
         }

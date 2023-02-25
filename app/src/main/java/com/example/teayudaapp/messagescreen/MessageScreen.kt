@@ -49,7 +49,7 @@ fun MessageScreen(
             enter = slideInHorizontally() + fadeIn(),
             exit = slideOutHorizontally() + fadeOut(),
         ) {
-            MessageIndividual(paddingValues = paddingValues)
+            MessageIndividual({},paddingValues = paddingValues)
         }
 
         AnimatedVisibility(
