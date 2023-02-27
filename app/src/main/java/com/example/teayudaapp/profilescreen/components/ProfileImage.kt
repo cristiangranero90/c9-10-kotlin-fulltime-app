@@ -45,7 +45,7 @@ fun ProfileImage(
                 modifier = Modifier
                     .size(146.dp)
                     .clip(shape = CircleShape),
-                error = painterResource(id = com.example.teayudaapp.R.drawable.home_material)
+                error = painterResource(id = com.example.teayudaapp.R.drawable.home_material_1)
             )
             Spacer(modifier = Modifier.height(20.dp))
         }

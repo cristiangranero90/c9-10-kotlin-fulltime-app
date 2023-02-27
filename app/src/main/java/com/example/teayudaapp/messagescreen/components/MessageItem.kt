@@ -51,7 +51,7 @@ fun MessageItem(
                     .size(43.dp)
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop,
-                error = painterResource(id = R.drawable.home_material)
+                error = painterResource(id = R.drawable.home_material_1)
             )
             Column(modifier = Modifier.fillMaxWidth()) {
                 Text(

@@ -45,7 +45,7 @@ fun MessageIndividualTopBar(
                         contentDescription = "Profile image",
                         modifier = Modifier.size(43.dp).clip(CircleShape),
                         contentScale = ContentScale.Crop,
-                        error = painterResource(id = R.drawable.home_material)
+                        error = painterResource(id = R.drawable.home_material_1)
                     )
                     Spacer(modifier = Modifier.width(5.dp))
                     Text(

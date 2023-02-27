@@ -1,6 +1,5 @@
 package com.example.teayudaapp.homescreen.presentation.components
 
-import android.service.autofill.OnClickAction
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
