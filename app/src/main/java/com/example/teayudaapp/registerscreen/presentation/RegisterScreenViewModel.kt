@@ -21,11 +21,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RegisterScreenViewModel @Inject constructor(
-    private val localData: RegisterRepositoryImpl
+    private val localData: RegisterRepositoryImpl,
+    private val auth: FirebaseAuth
 ): ViewModel() {
     //Firebase authorization
-    private var auth: FirebaseAuth = Firebase.auth
-    private var currentUser: FirebaseUser? = auth.currentUser
+    //private val auth: FirebaseAuth = Firebase.auth
+    private val currentUser: FirebaseUser? = auth.currentUser
     var state by mutableStateOf(RegisterState())
         private set
     init {
@@ -44,7 +45,9 @@ class RegisterScreenViewModel @Inject constructor(
             checkUser()
         }
     }
-
+    private fun sendConfirmation() {
+        currentUser?.sendEmailVerification()
+    }
     private fun reloadUsers(){
         viewModelScope.launch {
             state = state.copy(
@@ -118,6 +121,7 @@ class RegisterScreenViewModel @Inject constructor(
                             registerSuccess = true,
                             isLoginYet = true
                         )
+                        sendConfirmation()
                     }
                     else{
                         Log.d("Exception!!: ",task.exception.toString())

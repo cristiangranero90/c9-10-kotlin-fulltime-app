@@ -2,10 +2,7 @@ package com.example.teayudaapp.profilescreen
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.rememberScaffoldState
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -34,12 +31,11 @@ fun ProfileScreen(
     
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        topBar = { ProfileTopBar(buttonEdit = { /*TODO*/ } )},
+        topBar = { ProfileTopBar(buttonEdit = { viewModel.changeEdit(biography.value) } )},
         bottomBar = bottomNav,
-        scaffoldState = scaffoldState
+        scaffoldState = scaffoldState,
 
     ) { paddingValues ->
-
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -50,7 +46,11 @@ fun ProfileScreen(
                 ),
         ){
             item {
-                ProfileImage(name = "Profile Name", imageUrl = "https://via.placeholder.com/1000")
+                ProfileImage(
+                    name = viewModel.state.profileName,
+                    imageUrl = viewModel.state.profileImage,
+                    onCloseClicked = { viewModel.closeSession() }
+                )
             }
             item {
                 ProfileBiography(

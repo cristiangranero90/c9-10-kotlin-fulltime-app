@@ -4,12 +4,13 @@ import com.example.teayudaapp.homescreen.domain.model.Post
 import java.time.LocalDate
 
 data class ProfileState(
-    val profileId: Long = 0,
-    val profileImage: String? = null,
-    val profileBio: String = "No biography yet",
-    val profileDate: LocalDate = LocalDate.now(),
-    val isEditable: Boolean = false,
-    val isLoading: Boolean = false,
+    var profileId: String = "",
+    var profileImage: String? = null,
+    var profileName: String = "no name",
+    var profileBio: String = "No biography yet",
+    var profileDate: LocalDate = LocalDate.now(),
+    var isEditable: Boolean = false,
+    var isLoading: Boolean = false,
     val post: List<Post> = emptyList(),
 
     )

@@ -40,7 +40,7 @@ fun ProfileTopBar(
                 tint = MaterialTheme.colors.primary)
         },
         actions = {
-            IconButton(onClick = buttonEdit, enabled = false) {
+            IconButton(onClick = buttonEdit, enabled = true) {
                 Icon(
                     painter = painterResource(id = R.drawable.edit_button),
                     contentDescription = "Profile side",
