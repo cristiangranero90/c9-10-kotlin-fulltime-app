@@ -17,9 +17,12 @@ class RegisterScreenViewModel @Inject constructor(
     private val localData: RegisterRepositoryImpl
 ): ViewModel() {
 
+
+
     var state by mutableStateOf(RegisterState())
         private set
     init {
+
         viewModelScope.launch {
            state = state.copy(
                isLoading = true,

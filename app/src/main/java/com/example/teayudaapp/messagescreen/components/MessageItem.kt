@@ -44,6 +44,7 @@ fun MessageItem(
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceAround
         ) {
+            Spacer(modifier = Modifier.width(4.dp))
             AsyncImage(
                 model = profileImageUrl,
                 contentDescription = "Profile image",
