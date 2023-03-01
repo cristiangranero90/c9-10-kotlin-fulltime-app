@@ -52,7 +52,6 @@ fun ProfileTopBar(
         }
     )
 }
-
 @Composable
 @Preview(showBackground = true)
 fun ProfileTopBarPreview() {
