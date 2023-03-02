@@ -1,7 +1,6 @@
 import './App.css'
 import celular from '../src/celular.png'
 
-
 function App() {
   return (
     <div className="App">
