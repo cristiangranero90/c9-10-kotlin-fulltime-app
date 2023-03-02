@@ -21,6 +21,9 @@ function App() {
             </svg>
             </button>
           </a>
+          <svg className="absolute bottom-0 md:hidden" fill="none" viewBox="0 0 1728 342" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 17.87l48-7.045c48-7.047 144-20.356 240 0 96 20.355 192 74.377 288 128.399 96 54.021 192 108.043 288 115.089 96 6.263 192-33.666 288-47.758 96-13.31 192 0 288 14.092 96 13.31 192 26.62 240 33.666l48 6.263V342H0V17.87z" fill="#2a56fa" fillRule="evenodd"/>
+      </svg>
         </div>
         <img className="hidden md:inline max-w-none mt-[10%] h-[70vh] ml-[50%] md:ml-[55%] md:col-span-4" alt="Mobile" src={celular}></img>
         </div>
