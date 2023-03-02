@@ -30,7 +30,7 @@ class UserRepository @Inject constructor(
             db.collection("users").document("${user.id}").collection("messages").get()
 
         } catch (e: Exception) {
-
+            e.printStackTrace()
         }
     }
 
