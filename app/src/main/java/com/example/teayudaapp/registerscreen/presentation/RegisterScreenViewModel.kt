@@ -28,6 +28,9 @@ class RegisterScreenViewModel @Inject constructor(
     var state by mutableStateOf(RegisterState())
         private set
     init {
+        state = state.copy(
+            isLoading = true
+        )
         viewModelScope.launch {
            state = state.copy(
                isLoading = true,
@@ -41,12 +44,18 @@ class RegisterScreenViewModel @Inject constructor(
             )
             //Check if the user is already logged
             checkUser()
+            state = state.copy(
+                isLoading = false
+            )
         }
     }
     private fun sendConfirmation() {
         currentUser?.sendEmailVerification()
     }
     private fun reloadUsers(){
+        state = state.copy(
+            isLoading = true
+        )
         viewModelScope.launch {
             state = state.copy(
                 isLoading = true,
@@ -84,6 +93,9 @@ class RegisterScreenViewModel @Inject constructor(
     }
     fun onButtonContinuePressed(){
         //On login
+        state = state.copy(
+            isLoading = true
+        )
         if(
             state.loginScreen &&
             !state.passwordText.isNullOrEmpty() &&
@@ -136,6 +148,9 @@ class RegisterScreenViewModel @Inject constructor(
                 onFailure = true
             )
         }
+        state = state.copy(
+            isLoading = false
+        )
     }
     fun changeRegister() {
         state = state.copy(

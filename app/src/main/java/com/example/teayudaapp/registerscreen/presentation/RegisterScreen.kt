@@ -19,6 +19,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.teayudaapp.R
 import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 import com.example.teayudaapp.registerscreen.presentation.components.*
+import com.example.teayudaapp.sharedcomponents.LoadingDialog
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.GoogleAuthProvider
@@ -88,6 +89,9 @@ fun RegisterScreen(
         viewModel.changeLogin()
         Toast.makeText(context, "Iniciaste sesion como: ${viewModel.auth.currentUser!!.displayName ?: "No name" }", Toast.LENGTH_SHORT).show()
         loginSuccess()
+    }
+    if(homeState.isLoading){
+        LoadingDialog()
     }
 
     LazyColumn(
