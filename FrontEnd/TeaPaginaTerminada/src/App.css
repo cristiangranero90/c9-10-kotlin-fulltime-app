@@ -7,6 +7,7 @@ img{
     -webkit-user-drag: none;
     animation: celular 13s ease-in-out 0s infinite normal none;
     -webkit-animation: celular 13s ease-in-out 0s infinite normal none;
+    rotate: 1deg;
 }
 
 @keyframes celular {
@@ -16,11 +17,11 @@ img{
     100%{
         transform: translate(0px, 0px);
     }
-    49.8%{
-        transform: translate(0px,-50px);
-        -webkit-transform: translate(0px,-50px);
-        -moz-transform: translate(0px,-50px);
-        -ms-transform: translate(0px,-50px);
-        -o-transform: translate(0px,-50px);
+    50%{
+        transform: translate(0px,-45px);
+        -webkit-transform: translate(0px,-45px);
+        -moz-transform: translate(0px,-45px);
+        -ms-transform: translate(0px,-45px);
+        -o-transform: translate(0px,-45px);
 }
 }
