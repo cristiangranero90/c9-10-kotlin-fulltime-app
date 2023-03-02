@@ -24,7 +24,8 @@ class CreatePostViewModel @Inject constructor(
         state = state.copy(
             title = title,
             description = description,
-            hashTag = hashTag
+            hashTag = hashTag,
+            isLoading = true,
         )
         if (state.title.isNotBlank() && state.description.isNotBlank() && state.hashTag.isNotBlank())
         {
@@ -51,8 +52,10 @@ class CreatePostViewModel @Inject constructor(
                 error = true
             )
         }
+        state = state.copy(
+            isLoading = false
+        )
     }
-
     fun changeRealized() {
         state = state.copy(
             realized = false

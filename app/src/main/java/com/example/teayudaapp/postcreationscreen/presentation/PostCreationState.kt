@@ -6,4 +6,5 @@ data class PostCreationState(
     val title: String = "",
     val description: String = "",
     val hashTag: String = "",
+    val isLoading: Boolean = false,
 )

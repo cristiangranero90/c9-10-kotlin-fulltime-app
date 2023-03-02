@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.teayudaapp.postcreationscreen.presentation.components.CreatePostTopBar
 import com.example.teayudaapp.postcreationscreen.presentation.components.PostField
+import com.example.teayudaapp.sharedcomponents.LoadingDialog
 
 
 @Composable
@@ -41,6 +42,9 @@ fun CreatePost(
     if (viewModel.state.realized){
         viewModel.changeRealized()
         close()
+    }
+    if (viewModel.state.isLoading){
+        LoadingDialog()
     }
 
     Scaffold(
