@@ -11,6 +11,7 @@ data class ProfileState(
     var profileDate: LocalDate = LocalDate.now(),
     var isEditable: Boolean = false,
     var isLoading: Boolean = false,
+    var isLogIn: Boolean = true,
     val post: List<Post> = emptyList(),
 
     )

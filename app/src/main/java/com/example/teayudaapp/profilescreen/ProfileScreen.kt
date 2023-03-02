@@ -20,6 +20,7 @@ import java.time.LocalDate
 
 @Composable
 fun ProfileScreen(
+    goRegisterScreen: () -> Unit,
     bottomNav: @Composable () -> Unit,
     viewModel: ProfileViewModel = hiltViewModel(),
 ) {
@@ -27,6 +28,9 @@ fun ProfileScreen(
     val scaffoldState = rememberScaffoldState()
     val biography = remember {
         mutableStateOf(viewModel.state.profileBio)
+    }
+    if (!viewModel.state.isLogIn) {
+        goRegisterScreen()
     }
     
     Scaffold(
@@ -94,5 +98,5 @@ fun ProfileScreen(
 @Composable
 @Preview(showBackground = true, showSystemUi = true, name = "profile_screen")
 fun ProfileScreenPreview(){
-    ProfileScreen({ })
+    ProfileScreen({},{ })
 }

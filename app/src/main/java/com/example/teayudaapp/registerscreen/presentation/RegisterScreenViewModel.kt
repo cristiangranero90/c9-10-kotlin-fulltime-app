@@ -1,28 +1,27 @@
 package com.example.teayudaapp.registerscreen.presentation
 
+import android.app.Activity
 import android.util.Log
-import android.widget.Toast
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.teayudaapp.registerscreen.data.local.RegisterRepositoryImpl
-import com.example.teayudaapp.registerscreen.data.local.UserRegister
+import com.google.android.gms.auth.api.identity.Identity
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.signin.SignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.time.LocalDate
 import javax.inject.Inject
 
 @HiltViewModel
 class RegisterScreenViewModel @Inject constructor(
     private val localData: RegisterRepositoryImpl,
-    private val auth: FirebaseAuth
+    val auth: FirebaseAuth,
+    val signInOptions: GoogleSignInOptions
 ): ViewModel() {
     //Firebase authorization
     //private val auth: FirebaseAuth = Firebase.auth
@@ -62,7 +61,7 @@ class RegisterScreenViewModel @Inject constructor(
             )
         }
     }
-    private fun checkUser(){
+    fun checkUser(){
         if (currentUser != null){
             state = state.copy(
                 isLoginYet = true
@@ -152,6 +151,11 @@ class RegisterScreenViewModel @Inject constructor(
     fun changeError() {
         state = state.copy(
             onFailure = false
+        )
+    }
+    fun googleSignIn() {
+        state = state.copy(
+            isLoginYet = true
         )
     }
 }

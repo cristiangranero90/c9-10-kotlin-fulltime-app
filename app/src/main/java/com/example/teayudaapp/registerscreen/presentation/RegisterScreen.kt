@@ -1,7 +1,12 @@
 package com.example.teayudaapp.registerscreen.presentation
 
+import android.app.Activity
+import android.app.Instrumentation.ActivityResult
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
+import android.util.Log
 import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -13,9 +18,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.teayudaapp.Hilt_MainActivity
 import com.example.teayudaapp.R
 import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 import com.example.teayudaapp.registerscreen.presentation.components.*
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import dagger.hilt.android.internal.lifecycle.HiltWrapper_DefaultViewModelFactories_ActivityModule
 
 
 @Composable
@@ -24,6 +36,7 @@ fun RegisterScreen(
     viewModel: RegisterScreenViewModel = hiltViewModel(),
     modifier: Modifier = Modifier,
 ){
+
     val homeState = viewModel.state
     val context = LocalContext.current
     val largeSpacer = 21.67.dp
@@ -43,6 +56,28 @@ fun RegisterScreen(
         termsOrForgottenId = R.string.app_terms,
         registerButton = R.string.button_register)
 
+    val googleSignInClient = GoogleSignIn.getClient(context, viewModel.signInOptions)
+    val launcher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.StartActivityForResult()
+    ) {
+        val task =
+            try {
+                val account = GoogleSignIn.getSignedInAccountFromIntent(it.data)
+                    .getResult(ApiException::class.java)
+                val credential = GoogleAuthProvider.getCredential(account.idToken!!, null)
+                viewModel.auth.signInWithCredential(credential)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            viewModel.googleSignIn()
+                            Log.d("Init Session", "Google sign in")
+                        }
+                    }
+            }
+            catch (e: ApiException) {
+                Log.w("TAG", "GoogleSign in Failed", e)
+            }
+    }
+
     LaunchedEffect(key1 = homeState.registerSuccess){
         if (homeState.registerSuccess && !homeState.isLoginYet) {
             Toast.makeText(context, "Usuario registrado con exito", Toast.LENGTH_SHORT).show()
@@ -59,7 +94,7 @@ fun RegisterScreen(
     }
     if (homeState.isLoginYet) {
         viewModel.changeLogin()
-        Toast.makeText(context, "Inicio de sesion exitoso", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Iniciaste sesion como: ${viewModel.auth.currentUser!!.displayName}", Toast.LENGTH_SHORT).show()
         loginSuccess()
     }
 
@@ -114,7 +149,11 @@ fun RegisterScreen(
         }
 
         item {
-            ButtonLoginGoogle(dataString, colorsButton)
+            ButtonLoginGoogle( {
+                googleSignInClient.signOut()
+                launcher.launch(googleSignInClient.signInIntent) },
+                dataString,
+                colorsButton)
             Spacer(modifier = Modifier.height(largeSpacer))
         }
 
