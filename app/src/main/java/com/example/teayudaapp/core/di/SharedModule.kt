@@ -9,6 +9,7 @@ import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import dagger.Module
 import dagger.Provides
@@ -42,5 +43,9 @@ object SharedModule {
         .requestIdToken("1083688185591-ktn50gpruvlvbfiqgv65il9alfao8gmt.apps.googleusercontent.com")
         .requestEmail()
         .build()
+
+    @Provides
+    @Singleton
+    fun provideRemoteDatabase() = Firebase.firestore
 
 }

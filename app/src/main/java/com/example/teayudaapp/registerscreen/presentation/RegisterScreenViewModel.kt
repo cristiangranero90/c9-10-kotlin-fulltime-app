@@ -24,7 +24,6 @@ class RegisterScreenViewModel @Inject constructor(
     val signInOptions: GoogleSignInOptions
 ): ViewModel() {
     //Firebase authorization
-    //private val auth: FirebaseAuth = Firebase.auth
     private val currentUser: FirebaseUser? = auth.currentUser
     var state by mutableStateOf(RegisterState())
         private set

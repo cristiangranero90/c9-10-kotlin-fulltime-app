@@ -1,7 +1,5 @@
 package com.example.teayudaapp.registerscreen.presentation
 
-import android.app.Activity
-import android.app.Instrumentation.ActivityResult
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import android.util.Log
 import android.widget.Toast
@@ -18,25 +16,19 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.teayudaapp.Hilt_MainActivity
 import com.example.teayudaapp.R
 import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 import com.example.teayudaapp.registerscreen.presentation.components.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import dagger.hilt.android.internal.lifecycle.HiltWrapper_DefaultViewModelFactories_ActivityModule
-
 
 @Composable
 fun RegisterScreen(
     loginSuccess: () -> Unit,
     viewModel: RegisterScreenViewModel = hiltViewModel(),
-    modifier: Modifier = Modifier,
+    modifier: Modifier = Modifier
 ){
-
     val homeState = viewModel.state
     val context = LocalContext.current
     val largeSpacer = 21.67.dp
@@ -94,7 +86,7 @@ fun RegisterScreen(
     }
     if (homeState.isLoginYet) {
         viewModel.changeLogin()
-        Toast.makeText(context, "Iniciaste sesion como: ${viewModel.auth.currentUser!!.displayName}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Iniciaste sesion como: ${viewModel.auth.currentUser!!.displayName ?: "No name" }", Toast.LENGTH_SHORT).show()
         loginSuccess()
     }
 

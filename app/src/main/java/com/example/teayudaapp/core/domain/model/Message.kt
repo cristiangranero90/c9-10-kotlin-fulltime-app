@@ -4,7 +4,7 @@ import com.example.teayudaapp.homescreen.domain.model.User
 import java.time.LocalDate
 
 data class Message(
-    val id: Long,
+    val id: String,
     val createDate: LocalDate,
     val senderUser: User,
     val toUser: User,
