@@ -68,5 +68,14 @@ class HomeViewModel @Inject constructor(
             )
         }
     }
+    fun isActiveUser() : Boolean {
+        return currentUser.currentUser != null
+    }
 
+    fun showDialog() {
+        val aux = state.showDialog
+        state = state.copy(
+            showDialog = !aux
+        )
+    }
 }

@@ -1,5 +1,7 @@
 package com.example.teayudaapp.homescreen.presentation
 
+import android.app.Activity
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -17,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -25,6 +28,7 @@ import com.example.teayudaapp.sharedcomponents.BottomBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeTopBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeViewList
 import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
+import com.example.teayudaapp.sharedcomponents.ExitDialog
 import com.example.teayudaapp.sharedcomponents.LoadingDialog
 import java.time.LocalDate
 
@@ -36,15 +40,23 @@ fun HomeScreen(
     goCreatePost: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ){
+    val activity = LocalContext.current as Activity
     val scaffoldState = rememberScaffoldState()
     val searchText = remember { mutableStateOf("") }
     val refreshState = rememberPullRefreshState(
         refreshing = viewModel.state.isRefreshing,
         onRefresh = { viewModel.reloadAll() }
     )
-
+    if (viewModel.state.showDialog) {
+        ExitDialog(onDissmiss = { viewModel.showDialog() }) {
+            activity.finish()
+        }
+    }
     if (viewModel.state.isLoading){
         LoadingDialog()
+    }
+    BackHandler(viewModel.isActiveUser()) {
+        viewModel.showDialog()
     }
 
     Scaffold(
