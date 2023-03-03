@@ -24,7 +24,7 @@ fun HomePostData(
                 AsyncImage(
                     model = imageUrl,
                     contentDescription = "image of the post",
-                    contentScale = ContentScale.Crop,
+                    contentScale = ContentScale.FillWidth,
                     alignment = Alignment.Center)
             }
         }

@@ -56,7 +56,7 @@ fun RandomScreen(
                 HomePost(
                     textPost = "Some text",
                     imagePost = "https://via.placeholder.com/1000",
-                    datePost = LocalDate.now(),
+                    datePost = LocalDate.now().toString(),
                     imageUser = "https://via.placeholder.com/200",
                     userName = "User name",
                     hashTag = "#Gogo",

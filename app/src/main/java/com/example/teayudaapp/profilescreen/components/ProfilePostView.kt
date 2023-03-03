@@ -20,7 +20,7 @@ import java.time.LocalDate
 fun ProfilePostView(
     userImage: String,
     userName: String,
-    date: LocalDate,
+    date: String,
     postText: String,
     postImage: String?,
     hashtag: String,
@@ -59,7 +59,7 @@ fun ProfilePostViewPreview(){
     ProfilePostView(
         userImage = "https://via.placeholder.com/200",
         userName = "Profile Name",
-        date = LocalDate.now(),
+        date = "LocalDate.now()",
         postText = "Something to post",
         postImage = "https://via.placeholder.com/1000",
         hashtag = "#GoGo",

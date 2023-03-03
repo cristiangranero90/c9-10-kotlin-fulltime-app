@@ -24,7 +24,7 @@ fun HomePostTopData(
     imageUrl: String?,
     name: String,
     hashtag: String,
-    date: LocalDate,
+    date: String,
     inputColor: Color,
     modifier: Modifier = Modifier
 ) {
@@ -85,5 +85,5 @@ fun HomePostTopData(
 @Composable
 @Preview(showBackground = true)
 fun HomePostTopDataPreview(){
-    HomePostTopData(imageUrl = "https://via.placeholder.com/150" , name = "Some one", hashtag = "#work", date = LocalDate.now(), Color.Black)
+    HomePostTopData(imageUrl = "https://via.placeholder.com/150" , name = "Some one", hashtag = "#work", date = "LocalDate", Color.Black)
 }

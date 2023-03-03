@@ -17,7 +17,7 @@ import java.time.LocalDate
 fun HomePost(
     textPost: String,
     imagePost: String?,
-    datePost: LocalDate,
+    datePost: String,
     imageUser: String?,
     userName: String,
     hashTag: String,
@@ -57,5 +57,5 @@ fun HomePost(
 @Composable
 @Preview
 fun HomePostPreview() {
-    HomePost("So much text", null, LocalDate.now(), null, "Some one", "#Favourite", 3, 1, true)
+    HomePost("So much text", null, "LocalDate.now()", null, "Some one", "#Favourite", 3, 1, true)
 }

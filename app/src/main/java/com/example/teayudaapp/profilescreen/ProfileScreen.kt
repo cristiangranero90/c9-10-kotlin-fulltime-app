@@ -77,7 +77,7 @@ fun ProfileScreen(
                     ProfilePostView(
                         userImage = "https://via.placeholder.com/200",
                         userName = "Post name",
-                        date = LocalDate.now(),
+                        date = "LocalDate.now()",
                         postText = viewModel.state.profileBio,
                         postImage = "",
                         hashtag = "Gogo"

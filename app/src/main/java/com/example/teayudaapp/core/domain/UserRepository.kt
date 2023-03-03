@@ -3,6 +3,7 @@ package com.example.teayudaapp.core.domain
 import android.util.Log
 import com.example.teayudaapp.core.domain.model.UserFirestore
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.auth.User
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -44,5 +45,15 @@ class UserRepository @Inject constructor(
              e.printStackTrace()
             }
         return users
+    }
+
+    suspend fun getUserById(userId: String) : UserFirestore? {
+        var user: UserFirestore? = null
+        try {
+            user = db.collection("users").document("${userId}").get().await().toObject(UserFirestore::class.java)!!
+        } catch (e: java.lang.Exception) {
+            e.printStackTrace()
+        }
+        return user
     }
 }

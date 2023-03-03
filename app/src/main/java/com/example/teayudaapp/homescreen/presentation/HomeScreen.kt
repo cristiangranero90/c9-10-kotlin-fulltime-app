@@ -22,6 +22,7 @@ import com.example.teayudaapp.sharedcomponents.BottomBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeTopBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeViewList
 import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
+import com.example.teayudaapp.sharedcomponents.LoadingDialog
 import java.time.LocalDate
 
 @Composable
@@ -33,8 +34,11 @@ fun HomeScreen(
 ){
 
     val scaffoldState = rememberScaffoldState()
-    val searchText = remember { viewModel.state.searchText }
-    val createPost = remember { viewModel.state.createText }
+    val searchText = remember { mutableStateOf("") }
+
+    if (viewModel.state.isLoading){
+        LoadingDialog()
+    }
 
     Scaffold(
         scaffoldState = scaffoldState,
@@ -77,65 +81,19 @@ fun HomeScreen(
                 contentPadding = PaddingValues(10.dp),
             ) {
                 //Hardcoded items
-                item {
+                items( viewModel.state.posts.size){ index ->
+                    val user = viewModel.getUser(viewModel.state.posts[index].userId)
                     HomePost(
-                        textPost = "Something to show",
-                        imagePost = "https://via.placeholder.com/600 ",
-                        voteUpCount = 1,
-                        voteDownCount = 1,
-                        favouritePost = false,
-                        datePost = LocalDate.now(),
-                        imageUser = null,
-                        userName = "Some one",
-                        hashTag = "#Go go")
-                }
-                item {
-                    HomePost(
-                        textPost = "Something to show",
-                        imagePost = "https://via.placeholder.com/600 ",
-                        voteUpCount = 1,
-                        voteDownCount = 1,
-                        favouritePost = false,
-                        datePost = LocalDate.now(),
-                        imageUser = null,
-                        userName = "Some one",
-                        hashTag = "#Go go")
-                }
-                item {
-                    HomePost(
-                        textPost = "Something to show",
-                        imagePost = null,
-                        voteUpCount = 1,
-                        voteDownCount = 1,
-                        favouritePost = true,
-                        datePost = LocalDate.now(),
-                        imageUser = null,
-                        userName = "Some one",
-                        hashTag = "#Go go")
-                }
-                item {
-                    HomePost(
-                        textPost = "Something to show",
-                        imagePost = "https://via.placeholder.com/600 ",
-                        voteUpCount = 1,
-                        voteDownCount = 1,
-                        favouritePost = true,
-                        datePost = LocalDate.now(),
-                        imageUser = null,
-                        userName = "Some one",
-                        hashTag = "#Go go")
-                }
-                item {
-                    HomePost(
-                        textPost = "Something to show",
-                        imagePost = "https://via.placeholder.com/600 ",
-                        voteUpCount = 1,
-                        voteDownCount = 1,
-                        favouritePost = false,
-                        datePost = LocalDate.now(),
-                        imageUser = null,
-                        userName = "Some one",
-                        hashTag = "#Go go")
+                        textPost = viewModel.state.posts[index].postData,
+                        imagePost = viewModel.state.posts[index].imageUrl,
+                        datePost = viewModel.state.posts[index].createDate,
+                        imageUser = user?.imageUrl ?: "Nothing",
+                        userName = user?.name ?: "No user",
+                        hashTag = viewModel.state.posts[index].hashTag.toString(),
+                        voteUpCount = viewModel.state.posts[index].upVote,
+                        voteDownCount = viewModel.state.posts[index].downVote,
+                        favouritePost = false
+                    )
                 }
             }
         }
