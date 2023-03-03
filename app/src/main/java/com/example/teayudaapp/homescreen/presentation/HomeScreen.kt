@@ -112,8 +112,6 @@ fun HomeScreen(
                     contentColor = MaterialTheme.colors.primary
                 )
             }
-
-
         }
     }
 }

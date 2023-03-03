@@ -37,10 +37,11 @@ fun CreatePost(
     val context = LocalContext.current
 
     if (viewModel.state.error){
-        Toast.makeText(context, "No se pudo agregar", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Ocurrio un error", Toast.LENGTH_SHORT).show()
     }
     if (viewModel.state.realized){
         viewModel.changeRealized()
+        Toast.makeText(context, "Post agregado con exito", Toast.LENGTH_SHORT).show()
         close()
     }
     if (viewModel.state.isLoading){
