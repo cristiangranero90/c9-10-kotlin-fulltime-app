@@ -32,7 +32,6 @@ fun HomeScreen(
     goCreatePost: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ){
-
     val scaffoldState = rememberScaffoldState()
     val searchText = remember { mutableStateOf("") }
 
@@ -62,7 +61,7 @@ fun HomeScreen(
                    )
             }
         },
-        topBar = { HomeTopBar(profileClicked, searchText) },
+        topBar = { HomeTopBar(viewModel.getOwnImage(), profileClicked, searchText) },
         isFloatingActionButtonDocked = true,
         floatingActionButtonPosition = FabPosition.Center
     ){ paddingValues ->

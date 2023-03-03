@@ -51,6 +51,9 @@ android {
 }
 
 dependencies {
+    //Swipe to refresh
+    implementation "com.google.accompanist:accompanist-swiperefresh:0.29.1-alpha"
+
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:31.2.0')
     implementation 'com.google.firebase:firebase-auth-ktx'

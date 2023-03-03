@@ -30,7 +30,7 @@ fun RandomScreen(
     Scaffold(
         modifier = modifier.fillMaxSize(),
         scaffoldState = scaffoldState,
-        topBar = { HomeTopBar(onClick = { profileClicked() }, searchText = searchText )},
+        topBar = { HomeTopBar("", onClick = { profileClicked() }, searchText = searchText )},
         bottomBar = { bottomBar() }
     ) { paddingValues ->  
         LazyColumn(

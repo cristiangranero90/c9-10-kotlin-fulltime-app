@@ -9,6 +9,7 @@ import com.example.teayudaapp.core.domain.PostRepository
 import com.example.teayudaapp.core.domain.UserRepository
 import com.example.teayudaapp.core.domain.model.UserFirestore
 import com.example.teayudaapp.homescreen.domain.model.HomeState
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,7 +17,8 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val repository: PostRepository,
-    private val users: UserRepository
+    private val users: UserRepository,
+    private val currentUser: FirebaseAuth
 ): ViewModel() {
 
     var state by mutableStateOf(HomeState())
@@ -45,6 +47,9 @@ class HomeViewModel @Inject constructor(
             }
         }
         return user
+    }
+    fun getOwnImage() : String {
+        return currentUser.currentUser?.photoUrl.toString()
     }
 
     fun reloadAll() {

@@ -2,6 +2,7 @@ package com.example.teayudaapp.homescreen.presentation.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -12,7 +13,9 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -21,9 +24,12 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
+import com.example.teayudaapp.R
 
 @Composable
 fun HomeTopBar(
+    imageUrl: String,
     onClick: () -> Unit,
     searchText: MutableState<String>,
     modifier: Modifier = Modifier
@@ -69,14 +75,17 @@ fun HomeTopBar(
                 tint = MaterialTheme.colors.primary)
                          },
         actions = {
-
-
-            Icon(
-                imageVector = Icons.Default.Person,
-                contentDescription = "Profile side",
-                tint = MaterialTheme.colors.primary,
-                modifier = Modifier.size(39.dp).clickable { onClick() })
-            Spacer(modifier = Modifier.size(5.dp))
+            Spacer(modifier = Modifier.width(20.dp))
+            AsyncImage(
+                model = imageUrl,
+                contentDescription = "Profile Image",
+                modifier = Modifier
+                    .size(40.dp)
+                    .clip(CircleShape)
+                    .clickable { onClick() },
+                contentScale = ContentScale.Crop,
+                error = painterResource(id = R.drawable.baseline_person_24)
+            )
         }
     )
 }
@@ -85,5 +94,5 @@ fun HomeTopBar(
 @Preview(showBackground = true)
 fun HomeTopBarPreview(){
     val text = remember { mutableStateOf("Something") }
-    HomeTopBar( {},text )
+    HomeTopBar("", {},text )
 }
