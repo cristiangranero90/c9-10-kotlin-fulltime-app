@@ -83,7 +83,7 @@ fun CreatePost(
                 //Description box
                 PostField(
                     mutableText = descriptionText,
-                    title = "Descipcion",
+                    title = "Descripcion",
                     placeholderString = "Puede escribir hasta 255 caracteres",
                     height = 173.dp,
                     255,
