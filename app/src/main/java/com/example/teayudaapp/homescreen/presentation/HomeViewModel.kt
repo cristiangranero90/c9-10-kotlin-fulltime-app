@@ -1,5 +1,7 @@
 package com.example.teayudaapp.homescreen.presentation
 
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.pullrefresh.rememberPullRefreshState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -54,7 +56,7 @@ class HomeViewModel @Inject constructor(
 
     fun reloadAll() {
         state = state.copy(
-            isLoading = true
+            isRefreshing = true
         )
         viewModelScope.launch {
             state = state.copy(
@@ -62,7 +64,7 @@ class HomeViewModel @Inject constructor(
                 user = users.getUsers()
             )
             state = state.copy(
-                isLoading = false
+                isRefreshing = false
             )
         }
     }
