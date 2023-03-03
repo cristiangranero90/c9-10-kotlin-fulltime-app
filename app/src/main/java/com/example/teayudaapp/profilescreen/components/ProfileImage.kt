@@ -2,6 +2,7 @@ package com.example.teayudaapp.profilescreen.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -19,7 +20,8 @@ import coil.compose.AsyncImage
 @Composable
 fun ProfileImage(
     name: String,
-    imageUrl: String,
+    imageUrl: String?,
+    onCloseClicked: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -45,8 +47,12 @@ fun ProfileImage(
                 modifier = Modifier
                     .size(146.dp)
                     .clip(shape = CircleShape),
-                error = painterResource(id = com.example.teayudaapp.R.drawable.home_material)
+                error = painterResource(id = com.example.teayudaapp.R.drawable.home_material_1)
             )
+            Spacer(modifier = Modifier.height(20.dp))
+            Button(onClick = { onCloseClicked() }) {
+                Text(text = "Cerrar sesion", style = MaterialTheme.typography.caption, color = Color.Black)
+            }
             Spacer(modifier = Modifier.height(20.dp))
         }
     }
@@ -56,5 +62,5 @@ fun ProfileImage(
 @Composable
 @Preview(showBackground = true)
 fun ProfileImagePreview() {
-    ProfileImage("Profile name", "https://via.placeholder.com/1000" )
+    ProfileImage("Profile name", "https://via.placeholder.com/1000", {} )
 }

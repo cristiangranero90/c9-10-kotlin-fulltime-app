@@ -17,13 +17,15 @@ import java.time.LocalDate
 fun HomePost(
     textPost: String,
     imagePost: String?,
-    datePost: LocalDate,
+    datePost: String,
     imageUser: String?,
     userName: String,
     hashTag: String,
     voteUpCount: Int,
     voteDownCount: Int,
     favouritePost: Boolean,
+    tittle: String,
+    onFavouritesClicked: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val isExpanded = remember { mutableStateOf(false)}
@@ -47,9 +49,9 @@ fun HomePost(
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            HomePostData(imagePost, textPost, modifier = postHeight)
+            HomePostData(imagePost, textPost, modifier = postHeight, tittle =  tittle)
 
-            HomePostBottom(voteUpCount, voteDownCount, favouritePost)
+            HomePostBottom({ onFavouritesClicked() }, voteUpCount, voteDownCount, favouritePost)
         }
     }
 }
@@ -57,5 +59,5 @@ fun HomePost(
 @Composable
 @Preview
 fun HomePostPreview() {
-    HomePost("So much text", null, LocalDate.now(), null, "Some one", "#Favourite", 3, 1, true)
+    HomePost("So much text", null, "LocalDate.now()", null, "Some one", "#Favourite", 3, 1, true, "", {})
 }

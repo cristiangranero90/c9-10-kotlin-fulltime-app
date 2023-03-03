@@ -2,10 +2,7 @@ package com.example.teayudaapp.profilescreen
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.rememberScaffoldState
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -23,6 +20,7 @@ import java.time.LocalDate
 
 @Composable
 fun ProfileScreen(
+    goRegisterScreen: () -> Unit,
     bottomNav: @Composable () -> Unit,
     viewModel: ProfileViewModel = hiltViewModel(),
 ) {
@@ -31,15 +29,17 @@ fun ProfileScreen(
     val biography = remember {
         mutableStateOf(viewModel.state.profileBio)
     }
+    if (!viewModel.state.isLogIn) {
+        goRegisterScreen()
+    }
     
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        topBar = { ProfileTopBar(buttonEdit = { /*TODO*/ } )},
+        topBar = { ProfileTopBar(buttonEdit = { viewModel.changeEdit(biography.value) } )},
         bottomBar = bottomNav,
-        scaffoldState = scaffoldState
+        scaffoldState = scaffoldState,
 
     ) { paddingValues ->
-
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -50,7 +50,11 @@ fun ProfileScreen(
                 ),
         ){
             item {
-                ProfileImage(name = "Profile Name", imageUrl = "https://via.placeholder.com/1000")
+                ProfileImage(
+                    name = viewModel.state.profileName,
+                    imageUrl = viewModel.state.profileImage,
+                    onCloseClicked = { viewModel.closeSession() }
+                )
             }
             item {
                 ProfileBiography(
@@ -73,7 +77,7 @@ fun ProfileScreen(
                     ProfilePostView(
                         userImage = "https://via.placeholder.com/200",
                         userName = "Post name",
-                        date = LocalDate.now(),
+                        date = "LocalDate.now()",
                         postText = viewModel.state.profileBio,
                         postImage = "",
                         hashtag = "Gogo"
@@ -94,5 +98,5 @@ fun ProfileScreen(
 @Composable
 @Preview(showBackground = true, showSystemUi = true, name = "profile_screen")
 fun ProfileScreenPreview(){
-    ProfileScreen({ })
+    ProfileScreen({},{ })
 }

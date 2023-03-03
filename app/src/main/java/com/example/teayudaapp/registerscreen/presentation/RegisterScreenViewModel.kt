@@ -1,25 +1,36 @@
 package com.example.teayudaapp.registerscreen.presentation
 
+import android.app.Activity
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.teayudaapp.registerscreen.data.local.RegisterRepositoryImpl
-import com.example.teayudaapp.registerscreen.data.local.UserRegister
+import com.google.android.gms.auth.api.identity.Identity
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.signin.SignInOptions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.time.LocalDate
 import javax.inject.Inject
 
 @HiltViewModel
 class RegisterScreenViewModel @Inject constructor(
-    private val localData: RegisterRepositoryImpl
+    private val localData: RegisterRepositoryImpl,
+    val auth: FirebaseAuth,
+    val signInOptions: GoogleSignInOptions
 ): ViewModel() {
-
+    //Firebase authorization
+    private val currentUser: FirebaseUser? = auth.currentUser
     var state by mutableStateOf(RegisterState())
         private set
     init {
+        state = state.copy(
+            isLoading = true
+        )
         viewModelScope.launch {
            state = state.copy(
                isLoading = true,
@@ -31,10 +42,20 @@ class RegisterScreenViewModel @Inject constructor(
             state = state.copy(
                 isLoading = false
             )
+            //Check if the user is already logged
+            checkUser()
+            state = state.copy(
+                isLoading = false
+            )
         }
     }
-
+    private fun sendConfirmation() {
+        currentUser?.sendEmailVerification()
+    }
     private fun reloadUsers(){
+        state = state.copy(
+            isLoading = true
+        )
         viewModelScope.launch {
             state = state.copy(
                 isLoading = true,
@@ -48,7 +69,13 @@ class RegisterScreenViewModel @Inject constructor(
             )
         }
     }
-
+    fun checkUser(){
+        if (currentUser != null){
+            state = state.copy(
+                isLoginYet = true
+            )
+        }
+    }
     fun onValueEmailChange(text: String){
         state = state.copy(
             emailText = text
@@ -65,48 +92,65 @@ class RegisterScreenViewModel @Inject constructor(
         )
     }
     fun onButtonContinuePressed(){
-        if(state.loginScreen){
-            if (state.users.isNotEmpty()){
-                state.users.forEach { user ->
-                    if (user.email == state.emailText && user.password == state.passwordText){
+        //On login
+        state = state.copy(
+            isLoading = true
+        )
+        if(
+            state.loginScreen &&
+            !state.passwordText.isNullOrEmpty() &&
+            !state.emailText.isNullOrEmpty() &&
+            currentUser == null)
+        {
+            auth.signInWithEmailAndPassword(state.emailText, state.passwordText)
+                .addOnCompleteListener() { task ->
+                    if (task.isSuccessful){
                         state = state.copy(
                             isLoginYet = true
                         )
                     }
+                    else{
+                        Log.d("Exception!!: ",task.exception.toString())
+                        state = state.copy(
+                            onFailure = true
+                        )
+                    }
                 }
-                if (state.isLoginYet.not()){
-                    state = state.copy(
-                        onFailure = true
-                    )
-                }
-            } else {
-                state = state.copy(
-                    onFailure = true
-                )
-            }
-        } else {
-            if (state.emailText.isNotBlank() && state.passwordText.isNotBlank()){
-                viewModelScope.launch {
-                    localData.insertUser(
-                        UserRegister(state.emailText,
-                            state.passwordText,
-                            "",
-                            "",
-                            "",
-                            "",
-                            null,
-                            LocalDate.now().toString() )
-                    )
-                    state= state.copy(
-                        registerSuccess = true
-                    )
-                    reloadUsers()
-                }
-            }
-            else{
-                state = state.copy(onFailure = true)
-            }
         }
+        //On register
+        else if (
+            !state.loginScreen &&
+            !state.emailText.isNullOrEmpty() &&
+            !state.passwordText.isNullOrEmpty() &&
+            currentUser == null)
+        {
+            auth.createUserWithEmailAndPassword(state.emailText, state.passwordText)
+                .addOnCompleteListener{ task ->
+                    if(task.isSuccessful){
+                        state = state.copy(
+                            registerSuccess = true,
+                            isLoginYet = true
+                        )
+                        sendConfirmation()
+                    }
+                    else{
+                        Log.d("Exception!!: ",task.exception.toString())
+                        state = state.copy(
+                            onFailure = true
+                        )
+                    }
+                }
+        }
+        //On failure
+        else {
+            Log.d("Error", "Unknown error: Firebase detail ${currentUser.toString()}")
+            state = state.copy(
+                onFailure = true
+            )
+        }
+        state = state.copy(
+            isLoading = false
+        )
     }
     fun changeRegister() {
         state = state.copy(
@@ -121,6 +165,11 @@ class RegisterScreenViewModel @Inject constructor(
     fun changeError() {
         state = state.copy(
             onFailure = false
+        )
+    }
+    fun googleSignIn() {
+        state = state.copy(
+            isLoginYet = true
         )
     }
 }

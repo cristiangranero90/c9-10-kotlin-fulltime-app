@@ -30,7 +30,7 @@ fun RandomScreen(
     Scaffold(
         modifier = modifier.fillMaxSize(),
         scaffoldState = scaffoldState,
-        topBar = { HomeTopBar(onClick = { profileClicked() }, searchText = searchText )},
+        topBar = { HomeTopBar("", onClick = { profileClicked() }, searchText = searchText )},
         bottomBar = { bottomBar() }
     ) { paddingValues ->  
         LazyColumn(
@@ -56,13 +56,16 @@ fun RandomScreen(
                 HomePost(
                     textPost = "Some text",
                     imagePost = "https://via.placeholder.com/1000",
-                    datePost = LocalDate.now(),
+                    datePost = LocalDate.now().toString(),
                     imageUser = "https://via.placeholder.com/200",
                     userName = "User name",
                     hashTag = "#Gogo",
                     voteUpCount = 1,
                     voteDownCount = 10,
-                    favouritePost = false
+                    favouritePost = false,
+                    tittle = "",
+                    {},
+
                 )
                 Spacer(modifier = Modifier.height(10.dp))
             }

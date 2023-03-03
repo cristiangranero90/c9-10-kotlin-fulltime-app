@@ -16,15 +16,24 @@ import coil.compose.AsyncImage
 fun HomePostData(
     imageUrl: String?,
     textOfPost: String,
+    tittle: String,
     modifier: Modifier = Modifier,
 ) {
     Box(modifier = modifier.fillMaxWidth()) {
         Column(modifier = Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.TopStart) {
+                Text(text = tittle,
+                    style = MaterialTheme.typography.caption,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colors.onSecondary
+                )
+            }
+            Spacer(modifier = Modifier.height(10.dp))
             if (imageUrl.isNullOrBlank().not()){
                 AsyncImage(
                     model = imageUrl,
                     contentDescription = "image of the post",
-                    contentScale = ContentScale.Crop,
+                    contentScale = ContentScale.FillWidth,
                     alignment = Alignment.Center)
             }
         }
@@ -40,5 +49,5 @@ fun HomePostData(
 @Composable
 @Preview(showBackground = false)
 fun HomePostDataPreview(){
-    HomePostData("https://via.placeholder.com/1250", "Something to show")
+    HomePostData("https://via.placeholder.com/1250", "Something to show", "Titulo")
 }

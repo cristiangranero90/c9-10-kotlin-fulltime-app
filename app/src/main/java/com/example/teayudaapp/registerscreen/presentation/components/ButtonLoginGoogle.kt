@@ -14,6 +14,7 @@ import com.example.teayudaapp.registerscreen.domain.SharedStringsResources
 
 @Composable
 fun ButtonLoginGoogle(
+    onGoogleClicked: () -> Unit,
     dataString: SharedStringsResources,
     colorsButton: Color,
 ) {
@@ -21,7 +22,7 @@ fun ButtonLoginGoogle(
         modifier = Modifier
             .width(282.dp)
             .height(45.dp),
-        onClick = { /*TODO*/ },
+        onClick = { onGoogleClicked() },
         shape = MaterialTheme.shapes.large,
         colors = ButtonDefaults.buttonColors(backgroundColor = colorsButton)
     ) {

@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun HomePostBottom(
+    onFavouritesClicked: () -> Unit,
     voteCountUp: Int,
     voteCountDown: Int,
     favouritePost: Boolean,
@@ -35,18 +36,18 @@ fun HomePostBottom(
         )
 
         Row(
-            modifier = modifier.fillMaxWidth(),
+            modifier = modifier.fillMaxWidth().padding(end = 10.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
             IconButton(onClick = { /*TODO*/ }) {
-                Icon(imageVector = Icons.Default.Send, contentDescription = "Share with your friends")
+                Icon(imageVector = Icons.Default.Send, contentDescription = "Share with your friends", tint = color)
             }
             IconButton(onClick = { /*TODO*/ }) {
-                Icon(imageVector = Icons.Outlined.Comment, "Post a comment below")
+                Icon(imageVector = Icons.Outlined.Comment, "Post a comment below", tint = color)
             }
-            IconButton(onClick = { /*TODO*/ }) {
-                Icon(imageVector = favourite, contentDescription = "Add post to favourites")
+            IconButton(onClick = { onFavouritesClicked() }) {
+                Icon(imageVector = favourite, contentDescription = "Add post to favourites", tint = color)
             }
 
             Box(modifier = Modifier, contentAlignment = Alignment.CenterStart) {
@@ -55,15 +56,31 @@ fun HomePostBottom(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Start
                 ) {
-                    IconButton(onClick = { /*TODO*/ }) {
-                        Icon(imageVector = Icons.Default.KeyboardArrowUp, contentDescription = "Like post")
-                    }
-                    Text(text = voteCountUp.toString(), style = MaterialTheme.typography.caption)
 
-                    IconButton(onClick = { /*TODO*/ }) {
-                        Icon(imageVector = Icons.Default.KeyboardArrowDown, contentDescription = "Dislike post")
+                    Box(modifier = Modifier){
+                       Row(
+                           modifier = Modifier,
+                       //horizontalArrangement = Arrangement.spacedBy(0.dp),
+                       verticalAlignment = Alignment.CenterVertically
+                       ) {
+                           IconButton(onClick = { /*TODO*/ }) {
+                               Icon(imageVector = Icons.Default.KeyboardArrowUp, contentDescription = "Like post", tint = color)
+                           }
+                           Text(text = voteCountUp.toString(), style = MaterialTheme.typography.caption, color = color)
+                       }
                     }
-                    Text(text = voteCountDown.toString(), style = MaterialTheme.typography.caption)
+                    Box(modifier = Modifier){
+                        Row(
+                            modifier = Modifier,
+                            //horizontalArrangement = Arrangement.spacedBy(0.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            IconButton(onClick = { /*TODO*/ }) {
+                                Icon(imageVector = Icons.Default.KeyboardArrowDown, contentDescription = "Dislike post", tint = color)
+                            }
+                            Text(text = voteCountDown.toString(), style = MaterialTheme.typography.caption, color = color)
+                        }
+                    }
                 }
             }
         }
@@ -73,5 +90,5 @@ fun HomePostBottom(
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
 fun HomePostBottomPreview() {
-    HomePostBottom(3, 1,false)
+    HomePostBottom({},3, 1,false)
 }

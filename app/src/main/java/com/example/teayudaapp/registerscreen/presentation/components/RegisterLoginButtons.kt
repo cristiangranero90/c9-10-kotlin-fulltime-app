@@ -11,6 +11,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.teayudaapp.R
 
 @Composable
@@ -19,7 +20,6 @@ fun RegisterLoginButtons(
     isLogin: Boolean,
     onButtonClicked: (Boolean) -> Unit
 ) {
-
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -36,14 +36,14 @@ fun RegisterLoginButtons(
                 contentAlignment = Alignment.Center
             ){
                 Icon(
-                    painter = painterResource(id = R.drawable.register_button),
+                    painter = painterResource(id = R.drawable.border_button),
                     contentDescription = "Register side",
                     tint = MaterialTheme.colors.primary,
                     modifier = Modifier.size(width = 80.dp, height = 31.dp)
                 )
                 Text(
                     text = "Registrar",
-                    style = MaterialTheme.typography.body2,
+                    fontSize = 12.sp,
                     color = if (!isLogin) MaterialTheme.colors.onSecondary else MaterialTheme.colors.primaryVariant
                 )
             }
@@ -53,7 +53,7 @@ fun RegisterLoginButtons(
                 contentAlignment = Alignment.CenterStart
             ){
                 Icon(
-                    painter = painterResource(id = R.drawable.register_button),
+                    painter = painterResource(id = R.drawable.border_button),
                     contentDescription = "Loguin side",
                     tint = MaterialTheme.colors.background,
                     modifier = Modifier
@@ -62,8 +62,8 @@ fun RegisterLoginButtons(
                         .offset(x = 21.dp, y = 0.dp)
                 )
                 Text(
-                    text = "Login",
-                    style = MaterialTheme.typography.body2,
+                    text = "Loguearse",
+                    fontSize = 12.sp,
                     color = if (isLogin) MaterialTheme.colors.onSecondary else MaterialTheme.colors.primaryVariant
                 )
             }

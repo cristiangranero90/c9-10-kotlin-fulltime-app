@@ -1,18 +1,14 @@
 package com.example.teayudaapp.homescreen.presentation.components
 
-import android.text.format.DateFormat
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -21,15 +17,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import java.time.LocalDate
-import java.util.Date
-
-
 @Composable
 fun HomePostTopData(
     imageUrl: String?,
     name: String,
     hashtag: String,
-    date: LocalDate,
+    date: String,
     inputColor: Color,
     modifier: Modifier = Modifier
 ) {
@@ -50,7 +43,7 @@ fun HomePostTopData(
                         AsyncImage(
                             model = imageUrl,
                             contentDescription = "Profile of the post",
-                            error = painterResource(com.example.teayudaapp.R.drawable.home_material),
+                            error = painterResource(com.example.teayudaapp.R.drawable.home_material_1),
                             modifier = Modifier
                                 .size(33.dp)
                                 .clip(shape = CircleShape),
@@ -64,20 +57,25 @@ fun HomePostTopData(
                         Text(text = name,
                             style = MaterialTheme.typography.body2,
                             fontSize = 8.sp,
-                            color = inputColor,
-                            fontWeight = FontWeight.Bold)
+                            color = MaterialTheme.colors.onSecondary,
+                            fontWeight = FontWeight.Medium
+                        )
                         Text(text = date.toString(),
                             style = MaterialTheme.typography.body2,
                             fontSize = 8.sp,
-                            color = inputColor)
+                            color = Color(0xFF262763),
+                            fontWeight = FontWeight.Medium
+                        )
                     }
                 }
             }
-            Text(text = hashtag,
+            Text(
+                text = hashtag,
                 style = MaterialTheme.typography.body2,
                 fontSize = 8.sp,
-                color = inputColor,
-                fontWeight = FontWeight.Bold)
+                color = MaterialTheme.colors.onSecondary,
+                fontWeight = FontWeight.Medium
+            )
         }
     }
 }
@@ -85,5 +83,5 @@ fun HomePostTopData(
 @Composable
 @Preview(showBackground = true)
 fun HomePostTopDataPreview(){
-    HomePostTopData(imageUrl = "https://via.placeholder.com/150" , name = "Some one", hashtag = "#work", date = LocalDate.now(), Color.Black)
+    HomePostTopData(imageUrl = "https://via.placeholder.com/150" , name = "Some one", hashtag = "#work", date = "LocalDate", Color.Black)
 }

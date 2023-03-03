@@ -58,7 +58,7 @@ fun Navigation(){
 
     NavHost(
         navController = navController,
-        startDestination = "splash_screen"
+        startDestination = "splash_screen",
     ) {
         //TODO: Hardcoded entry, create enum class or sealed class
         composable("splash_screen"){
@@ -81,13 +81,21 @@ fun Navigation(){
             FavouritesScreen( { navController.navigate("profile_screen") }, bottomNav)
         }
         composable("profile_screen"){
-            ProfileScreen(bottomNav)
+            ProfileScreen(
+                { navController.navigate("register_screen")
+                    {
+                    popUpTo("register_screen")
+                    launchSingleTop = true
+                    restoreState = false
+                    }
+                },
+                bottomNav)
         }
         composable("random_screen") {
             RandomScreen(profileClicked = { navController.navigate("profile_screen") }, bottomNav)
         }
         composable("message_screen") {
-            MessageScreen(bottomBar = bottomNav) { navController.navigateUp() }
+            MessageScreen(bottomBar = bottomNav, onClose = { navController.navigateUp() })
         }
     }
 
