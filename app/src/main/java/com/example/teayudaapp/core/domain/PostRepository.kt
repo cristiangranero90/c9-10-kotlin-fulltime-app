@@ -43,6 +43,10 @@ class PostRepository @Inject constructor(
         }
         return post
     }
+
+    suspend fun deleteFavouritePost() {
+
+    }
     fun addPostToFavourites(post: PostType, userId: String) {
         try {
             db.collection("users").document(userId).collection("favouritesPost").add(post)
