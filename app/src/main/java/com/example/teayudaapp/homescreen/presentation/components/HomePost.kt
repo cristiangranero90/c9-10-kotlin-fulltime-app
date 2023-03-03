@@ -24,6 +24,7 @@ fun HomePost(
     voteUpCount: Int,
     voteDownCount: Int,
     favouritePost: Boolean,
+    onFavouritesClicked: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val isExpanded = remember { mutableStateOf(false)}
@@ -49,7 +50,7 @@ fun HomePost(
 
             HomePostData(imagePost, textPost, modifier = postHeight)
 
-            HomePostBottom(voteUpCount, voteDownCount, favouritePost)
+            HomePostBottom({ onFavouritesClicked() }, voteUpCount, voteDownCount, favouritePost)
         }
     }
 }
@@ -57,5 +58,5 @@ fun HomePost(
 @Composable
 @Preview
 fun HomePostPreview() {
-    HomePost("So much text", null, "LocalDate.now()", null, "Some one", "#Favourite", 3, 1, true)
+    HomePost("So much text", null, "LocalDate.now()", null, "Some one", "#Favourite", 3, 1, true, {})
 }

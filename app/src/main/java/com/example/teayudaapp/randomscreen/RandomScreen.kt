@@ -62,7 +62,8 @@ fun RandomScreen(
                     hashTag = "#Gogo",
                     voteUpCount = 1,
                     voteDownCount = 10,
-                    favouritePost = false
+                    favouritePost = false,
+                    {}
                 )
                 Spacer(modifier = Modifier.height(10.dp))
             }

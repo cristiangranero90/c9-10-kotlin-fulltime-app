@@ -17,20 +17,16 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.teayudaapp.homescreen.presentation.components.HomePost
-import com.example.teayudaapp.sharedcomponents.BottomBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeTopBar
 import com.example.teayudaapp.homescreen.presentation.components.HomeViewList
-import com.example.teayudaapp.postcreationscreen.presentation.CreatePost
 import com.example.teayudaapp.sharedcomponents.ExitDialog
 import com.example.teayudaapp.sharedcomponents.LoadingDialog
-import java.time.LocalDate
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -48,7 +44,7 @@ fun HomeScreen(
         onRefresh = { viewModel.reloadAll() }
     )
     if (viewModel.state.showDialog) {
-        ExitDialog(onDissmiss = { viewModel.showDialog() }) {
+        ExitDialog(onDismiss = { viewModel.showDialog() }) {
             activity.finish()
         }
     }
@@ -113,7 +109,8 @@ fun HomeScreen(
                             hashTag = viewModel.state.posts[index].hashTag.toString(),
                             voteUpCount = viewModel.state.posts[index].upVote,
                             voteDownCount = viewModel.state.posts[index].downVote,
-                            favouritePost = false
+                            favouritePost = viewModel.isFavourite(viewModel.state.posts[index]) ,
+                            onFavouritesClicked = { viewModel.addToFavourites(viewModel.state.posts[index]) }
                         )
                     }
                 }

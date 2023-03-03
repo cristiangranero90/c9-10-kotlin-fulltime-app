@@ -32,4 +32,25 @@ class PostRepository @Inject constructor(
         }
         return post
     }
+    suspend fun getFavouritesPost(userId: String) : List<PostType> {
+        var post = emptyList<PostType>()
+        try {
+            post = db.collection("user").document(userId).collection("favouritesPost").get().await().map {
+                it.toObject(PostType::class.java)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return post
+    }
+    fun addPostToFavourites(post: PostType, userId: String) {
+        try {
+            db.collection("user").document(userId).collection("favouritesPost").add(post)
+                .addOnSuccessListener {
+                    Log.d("Favourites", "Added to favourites")
+                }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 }

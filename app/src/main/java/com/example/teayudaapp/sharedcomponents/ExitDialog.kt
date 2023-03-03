@@ -17,11 +17,11 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ExitDialog(
-    onDissmiss: () -> Unit,
+    onDismiss: () -> Unit,
     onConfirm: () -> Unit,
 ) {
     AlertDialog(
-        onDismissRequest = { onDissmiss() },
+        onDismissRequest = { onDismiss() },
         title = {
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.Top) {
                 Text(text = "Quieres salir de la aplicacion?", style = MaterialTheme.typography.body1)
@@ -29,7 +29,7 @@ fun ExitDialog(
         },
         confirmButton = {
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                Button(onClick = { onDissmiss() }, modifier = Modifier.width(150.dp)) {
+                Button(onClick = { onDismiss() }, modifier = Modifier.width(150.dp)) {
                     Text(text = "Cancelar", style = MaterialTheme.typography.caption)
                 }
                 Button(onClick = { onConfirm() }, modifier = Modifier.width(150.dp)) {

@@ -1,7 +1,5 @@
 package com.example.teayudaapp.homescreen.presentation
 
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.pullrefresh.rememberPullRefreshState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -9,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.teayudaapp.core.domain.PostRepository
 import com.example.teayudaapp.core.domain.UserRepository
+import com.example.teayudaapp.core.domain.model.PostType
 import com.example.teayudaapp.core.domain.model.UserFirestore
 import com.example.teayudaapp.homescreen.domain.model.HomeState
 import com.google.firebase.auth.FirebaseAuth
@@ -18,7 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val repository: PostRepository,
+    private val postRepository: PostRepository,
     private val users: UserRepository,
     private val currentUser: FirebaseAuth
 ): ViewModel() {
@@ -32,8 +31,9 @@ class HomeViewModel @Inject constructor(
         )
         viewModelScope.launch {
             state = state.copy(
-                posts = repository.getPosts(),
-                user = users.getUsers()
+                posts = postRepository.getPosts(),
+                user = users.getUsers(),
+                favouritesPost = postRepository.getFavouritesPost(currentUser.currentUser?.uid.toString())
             )
             state = state.copy(
                 isLoading = false
@@ -60,8 +60,9 @@ class HomeViewModel @Inject constructor(
         )
         viewModelScope.launch {
             state = state.copy(
-                posts = repository.getPosts(),
-                user = users.getUsers()
+                posts = postRepository.getPosts(),
+                user = users.getUsers(),
+                favouritesPost = postRepository.getFavouritesPost(currentUser.currentUser?.uid.toString())
             )
             state = state.copy(
                 isRefreshing = false
@@ -77,5 +78,20 @@ class HomeViewModel @Inject constructor(
         state = state.copy(
             showDialog = !aux
         )
+    }
+    fun addToFavourites(postType: PostType) {
+        if (!isFavourite(postType)) {
+            postRepository.addPostToFavourites(postType, currentUser.currentUser?.uid.toString())
+        }
+    }
+
+    fun isFavourite(postType: PostType): Boolean {
+        var aux = false
+        if (state.favouritesPost.isNotEmpty()){
+            state.favouritesPost.forEach {
+                aux = aux || it == postType
+            }
+        }
+        return aux
     }
 }

@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun HomePostBottom(
+    onFavouritesClicked: () -> Unit,
     voteCountUp: Int,
     voteCountDown: Int,
     favouritePost: Boolean,
@@ -45,7 +46,7 @@ fun HomePostBottom(
             IconButton(onClick = { /*TODO*/ }) {
                 Icon(imageVector = Icons.Outlined.Comment, "Post a comment below", tint = color)
             }
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(onClick = { onFavouritesClicked() }) {
                 Icon(imageVector = favourite, contentDescription = "Add post to favourites", tint = color)
             }
 
@@ -96,5 +97,5 @@ fun HomePostBottom(
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
 fun HomePostBottomPreview() {
-    HomePostBottom(3, 1,false)
+    HomePostBottom({},3, 1,false)
 }
