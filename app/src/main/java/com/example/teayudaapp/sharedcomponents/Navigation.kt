@@ -95,7 +95,7 @@ fun Navigation(){
             RandomScreen(profileClicked = { navController.navigate("profile_screen") }, bottomNav)
         }
         composable("message_screen") {
-            MessageScreen(bottomBar = bottomNav) { navController.navigateUp() }
+            MessageScreen(bottomBar = bottomNav, onClose = { navController.navigateUp() })
         }
     }
 

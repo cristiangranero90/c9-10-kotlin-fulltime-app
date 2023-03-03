@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.teayudaapp.messagescreen.components.MessageIndividual
 import com.example.teayudaapp.messagescreen.components.MessageIndividualTopBar
 import com.example.teayudaapp.messagescreen.components.MessageItem
@@ -21,6 +22,7 @@ import com.example.teayudaapp.messagescreen.components.MessagesTopBar
 fun MessageScreen(
     bottomBar: @Composable () -> Unit,
     onClose: () -> Unit,
+    viewModel: MessageViewModel = hiltViewModel()
 ) {
     val scaffoldState = rememberScaffoldState()
     val individual = remember {
@@ -33,8 +35,8 @@ fun MessageScreen(
         topBar = {
             if (individual.value){
                 MessageIndividualTopBar(
-                    profileImage = "https://via.placeholder.com/200",
-                    profileName = "Some name",
+                    profileImage = "https://c2e9a7e8.rocketcdn.me/wp-content/uploads/2023/01/openAI-chat-gpt-1.jpg",
+                    profileName = "Chat GPT",
                     onClick = { individual.value = !individual.value })
             } else{
                 MessagesTopBar( { onClose() } )
@@ -61,23 +63,22 @@ fun MessageScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(
-                        top = paddingValues.calculateTopPadding(),
+                        top = paddingValues.calculateTopPadding() + 10.dp,
                         bottom = paddingValues.calculateBottomPadding(),
                         start = 10.dp,
                         end = 10.dp
                     ),
-                verticalArrangement = Arrangement.SpaceAround,
+                verticalArrangement = Arrangement.spacedBy(10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
-                items(10) {
+                items(2) {
                     //TODO: Message items from database
                     MessageItem(
-                        profileImageUrl = "https://via.placeholder.com/200",
-                        profileName = "Some name",
-                        messageText = "Some message from the future just read it llkjasljkdklajsdkljsldjksdljsdljklasjkl",
+                        profileImageUrl = "https://c2e9a7e8.rocketcdn.me/wp-content/uploads/2023/01/openAI-chat-gpt-1.jpg",
+                        profileName = "Chat GPT",
+                        messageText = "Envia y recibe mensajes al instante...",
                         onClick = { individual.value = !individual.value }
                     )
-                    Spacer(modifier = Modifier.height(10.dp))
                 }
             }
         }

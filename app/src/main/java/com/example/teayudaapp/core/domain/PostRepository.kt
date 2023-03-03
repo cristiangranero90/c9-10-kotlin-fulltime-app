@@ -35,7 +35,7 @@ class PostRepository @Inject constructor(
     suspend fun getFavouritesPost(userId: String) : List<PostType> {
         var post = emptyList<PostType>()
         try {
-            post = db.collection("user").document(userId).collection("favouritesPost").get().await().map {
+            post = db.collection("users").document(userId).collection("favouritesPost").get().await().map {
                 it.toObject(PostType::class.java)
             }
         } catch (e: Exception) {
@@ -45,7 +45,7 @@ class PostRepository @Inject constructor(
     }
     fun addPostToFavourites(post: PostType, userId: String) {
         try {
-            db.collection("user").document(userId).collection("favouritesPost").add(post)
+            db.collection("users").document(userId).collection("favouritesPost").add(post)
                 .addOnSuccessListener {
                     Log.d("Favourites", "Added to favourites")
                 }

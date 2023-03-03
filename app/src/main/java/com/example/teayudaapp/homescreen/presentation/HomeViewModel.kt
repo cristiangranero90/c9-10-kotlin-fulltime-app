@@ -82,6 +82,7 @@ class HomeViewModel @Inject constructor(
     fun addToFavourites(postType: PostType) {
         if (!isFavourite(postType)) {
             postRepository.addPostToFavourites(postType, currentUser.currentUser?.uid.toString())
+            reloadAll()
         }
     }
 
