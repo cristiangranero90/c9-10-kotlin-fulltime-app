@@ -2,7 +2,6 @@ package com.example.teayudaapp.favouritesscreen
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -38,6 +37,24 @@ class FavouritesViewModel @Inject constructor(
                 isLoading = false
             )
         }
+    }
+
+    fun reloadAll() {
+        state= state.copy(
+            isLoading = true
+        )
+        viewModelScope.launch {
+            state = state.copy(
+                favouritesPost = postRepository.getFavouritesPost(currentUser.currentUser!!.uid),
+                usersList = userRepository.getUsers()
+            )
+            state= state.copy(
+                isLoading = false
+            )
+        }
+    }
+    fun deleteFavouritePost() {
+
     }
 
     fun getUser(userId: String) : UserFirestore? {

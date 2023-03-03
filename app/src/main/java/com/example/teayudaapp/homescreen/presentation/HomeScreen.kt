@@ -110,7 +110,8 @@ fun HomeScreen(
                             voteUpCount = viewModel.state.posts[index].upVote,
                             voteDownCount = viewModel.state.posts[index].downVote,
                             favouritePost = viewModel.isFavourite(viewModel.state.posts[index]) ,
-                            onFavouritesClicked = { viewModel.addToFavourites(viewModel.state.posts[index]) }
+                            onFavouritesClicked = { viewModel.addToFavourites(viewModel.state.posts[index]) },
+                            tittle = viewModel.state.posts[index].title
                         )
                     }
                 }

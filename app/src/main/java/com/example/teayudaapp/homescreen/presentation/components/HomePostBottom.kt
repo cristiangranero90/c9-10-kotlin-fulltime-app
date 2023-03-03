@@ -59,7 +59,6 @@ fun HomePostBottom(
 
                     Box(modifier = Modifier){
                        Row(
-
                            modifier = Modifier,
                        //horizontalArrangement = Arrangement.spacedBy(0.dp),
                        verticalAlignment = Alignment.CenterVertically
@@ -69,9 +68,7 @@ fun HomePostBottom(
                            }
                            Text(text = voteCountUp.toString(), style = MaterialTheme.typography.caption, color = color)
                        }
-
                     }
-
                     Box(modifier = Modifier){
                         Row(
                             modifier = Modifier,
@@ -84,10 +81,6 @@ fun HomePostBottom(
                             Text(text = voteCountDown.toString(), style = MaterialTheme.typography.caption, color = color)
                         }
                     }
-
-
-
-
                 }
             }
         }

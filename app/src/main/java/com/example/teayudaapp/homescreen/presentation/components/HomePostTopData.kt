@@ -17,8 +17,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import java.time.LocalDate
-
-
 @Composable
 fun HomePostTopData(
     imageUrl: String?,

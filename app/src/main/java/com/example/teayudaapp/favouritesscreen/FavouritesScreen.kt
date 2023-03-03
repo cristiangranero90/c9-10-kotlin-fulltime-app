@@ -57,7 +57,8 @@ fun FavouritesScreen(
                         voteUpCount = viewModel.state.favouritesPost[index].upVote,
                         voteDownCount = viewModel.state.favouritesPost[index].downVote,
                         favouritePost = true ,
-                        onFavouritesClicked = { /*TODO: Do nothing or delete post */ }
+                        onFavouritesClicked = { /*TODO: Do nothing or delete post */ },
+                        tittle = viewModel.state.favouritesPost[index].title
                     )
                 }
             }

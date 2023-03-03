@@ -24,6 +24,7 @@ fun HomePost(
     voteUpCount: Int,
     voteDownCount: Int,
     favouritePost: Boolean,
+    tittle: String,
     onFavouritesClicked: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -48,7 +49,7 @@ fun HomePost(
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            HomePostData(imagePost, textPost, modifier = postHeight)
+            HomePostData(imagePost, textPost, modifier = postHeight, tittle =  tittle)
 
             HomePostBottom({ onFavouritesClicked() }, voteUpCount, voteDownCount, favouritePost)
         }
@@ -58,5 +59,5 @@ fun HomePost(
 @Composable
 @Preview
 fun HomePostPreview() {
-    HomePost("So much text", null, "LocalDate.now()", null, "Some one", "#Favourite", 3, 1, true, {})
+    HomePost("So much text", null, "LocalDate.now()", null, "Some one", "#Favourite", 3, 1, true, "", {})
 }

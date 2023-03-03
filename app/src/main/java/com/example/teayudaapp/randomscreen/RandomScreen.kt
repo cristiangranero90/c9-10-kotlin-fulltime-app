@@ -63,7 +63,9 @@ fun RandomScreen(
                     voteUpCount = 1,
                     voteDownCount = 10,
                     favouritePost = false,
-                    {}
+                    tittle = "",
+                    {},
+
                 )
                 Spacer(modifier = Modifier.height(10.dp))
             }
