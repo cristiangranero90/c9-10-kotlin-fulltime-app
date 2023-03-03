@@ -1,5 +1,6 @@
 package com.example.teayudaapp.messagescreen
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -24,9 +25,18 @@ fun MessageScreen(
     onClose: () -> Unit,
     viewModel: MessageViewModel = hiltViewModel()
 ) {
+    val individualImage = remember {
+        mutableStateOf("")
+    }
+    val individualName = remember {
+        mutableStateOf("")
+    }
     val scaffoldState = rememberScaffoldState()
     val individual = remember {
         mutableStateOf(false)
+    }
+    BackHandler(individual.value) {
+        individual.value = !individual.value
     }
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -35,8 +45,8 @@ fun MessageScreen(
         topBar = {
             if (individual.value){
                 MessageIndividualTopBar(
-                    profileImage = "https://c2e9a7e8.rocketcdn.me/wp-content/uploads/2023/01/openAI-chat-gpt-1.jpg",
-                    profileName = "Chat GPT",
+                    profileImage = individualImage.value,
+                    profileName = individualName.value,
                     onClick = { individual.value = !individual.value })
             } else{
                 MessagesTopBar( { onClose() } )
@@ -71,13 +81,17 @@ fun MessageScreen(
                 verticalArrangement = Arrangement.spacedBy(10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
-                items(2) {
+                items(10) {
                     //TODO: Message items from database
                     MessageItem(
-                        profileImageUrl = "https://c2e9a7e8.rocketcdn.me/wp-content/uploads/2023/01/openAI-chat-gpt-1.jpg",
-                        profileName = "Chat GPT",
+                        profileImageUrl = viewModel.state.images[it],
+                        profileName = viewModel.state.names[it],
                         messageText = "Envia y recibe mensajes al instante...",
-                        onClick = { individual.value = !individual.value }
+                        onClick = {
+                            individual.value = !individual.value
+                            individualImage.value = viewModel.state.images[it]
+                            individualName.value = viewModel.state.names[it]
+                        }
                     )
                 }
             }
