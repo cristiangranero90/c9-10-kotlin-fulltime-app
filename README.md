@@ -28,6 +28,10 @@ Web: [StartWeb for TEAyuda app](https://tea-c9-10-kotlin-fulltime.vercel.app)
 
 Android app: [Android app - Descarga](https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/TeaPaginaTerminada/public/Tea_setup.apk)
 
+### ***Documentos***
+
+Requerimientos funcionales: [Req. Funcionales](https://docs.google.com/document/d/1mVyPClqDkLqXgLRaZTMdkm4SLiDCiuOJNMAy_E1x8MY/edit?usp=sharing)
+
 ### ***Galeria*** 
 
 ***Web Page***
