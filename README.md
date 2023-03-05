@@ -9,7 +9,7 @@ ser diagnosticadas con los profesionales que corresponden.
 ### ***Tecnologias***
 
 1. ***Kotlin - Jetpack Compose - Dagger Hilt - Room - Firebase connect - Navigation compose - Coil***
-2. ***React - Javascript - HTML - Css***
+2. ***ReactJS - JavaScript - HTML5 - CSS3***
 3. ***Firebase suite - Auth - Cloud database - File storage***
 4. ***Trello - Figma***
 
@@ -19,7 +19,7 @@ ser diagnosticadas con los profesionales que corresponden.
 
 * ***Facundo Ramirez:*** Frontend (UX/UI - Web)
 
-* ***Leidy Ramire:*** Tester QA manual
+* ***Leidy Ramirez:*** Tester QA manual
 
 
 ### ***Despliegue***
