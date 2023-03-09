@@ -1,7 +1,7 @@
 # TEAyuda App - Android - Web 
 ### C9-10-Kotlin-FT 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TEAyuda es una red social, especialmente para dar conocimiento y aportar testimonios de personas con alguna discapacidad tanto mental como motriz.
+TEAyuda es una red social, especialmente para dar conocimiento y aportar testimonios de personas con diagnotico de trastorno del espectro autista.
 La red social busca que las personas puedan aprender sobre si mismas y el resto, de como manejar situaciones y las diferentes formas de comunicacion que
 requiere cada diagnostico. Ademas, intenta dar un acercamiento a aquellas personas que desconocen y que puedan aportar a la deteccion temprana para luego
 ser diagnosticadas con los profesionales que corresponden. 
