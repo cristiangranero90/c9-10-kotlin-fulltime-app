@@ -1,7 +1,10 @@
 # TEAyuda App - Android - Web 
 ### C9-10-Kotlin-FT 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-TEAyuda es una red social, especialmente para dar conocimiento y aportar testimonios de personas con alguna discapacidad tanto mental como motriz.
+
+### ***Introduccion***
+
+TEAyuda es una red social, especialmente para dar conocimiento y aportar testimonios de y sobre personas con trastorno del espectro autista (TEA).
 La red social busca que las personas puedan aprender sobre si mismas y el resto, de como manejar situaciones y las diferentes formas de comunicacion que
 requiere cada diagnostico. Ademas, intenta dar un acercamiento a aquellas personas que desconocen y que puedan aportar a la deteccion temprana para luego
 ser diagnosticadas con los profesionales que corresponden. 
@@ -41,6 +44,7 @@ Requerimientos funcionales: [Req. Funcionales](https://docs.google.com/document/
 
 <img src="https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/Gallery/SplashScreen.jpg" alt="Splash Screen" width="300"/><img src="https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/Gallery/RegisterScreen.jpg" alt="Register Screen" width="300"/><img src="https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/Gallery/LoginScreen.jpg" alt="Login Screen" width="300"/><img src="https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/Gallery/GoogleSignIn.jpg" alt="GoogleSignIn Screen" width="300"/><img src="https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/Gallery/HomeScreen.jpg" alt="Home Screen" width="300"/><img src="https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/Gallery/PostScreen.jpg" alt="Post Screen" width="300"/><img src="https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/Gallery/RandomScreen.jpg" alt="Random Screen" width="300"/><img src="https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/Gallery/ChatScreen.jpg" alt="Chat Screen" width="300"/><img src="https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/Gallery/ConversationScreen.jpg" alt="Conversation Screen" width="300"/><img src="https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/Gallery/FavouritesScreen.jpg" alt="Favourties Screen" width="300"/><img src="https://github.com/No-Country/c9-10-kotlin-fulltime/blob/main/FrontEnd/Gallery/ProfileScreen.jpg" alt="Profile Screen" width="300"/>
 
+### ***Importante***
 
-
+El proyecto completo se puede encontrar en: [C9-10-Kotlin-Fulltime - NoCountry]("https://github.com/No-Country/c9-10-kotlin-fulltime")
 
