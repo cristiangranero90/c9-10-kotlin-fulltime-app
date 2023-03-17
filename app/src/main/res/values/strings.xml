@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TEAyudaApp</string>
+    <string name="app_tittle">TEA</string>
+    <string name="app_terms">Aceptar los terminos y condiciones</string>
+    <string name="register_email">Elige un correo</string>
+    <string name="register_password">Elige una contraseña</string>
+    <string name="button_continue">Continuar</string>
+    <string name="button_register">Registrarse con</string>
+
+    <string name="login_email">Correo electronico</string>
+    <string name="login_password">Contraseña</string>
+    <string name="button_login">Iniciar sesion con</string>
+    <string name="forgotten_password">Olvidaste tu contraseña?</string>
+
+    <string name="news_string">Noticias</string>
+    <string name="top_string">Top</string>
+    <string name="trends_string">Tendencias</string>
+    <string name="search_placeholder">Buscar: Usuarios, Hashtags...</string>
+    <string name="firebase_web_client">1083688185591-ktn50gpruvlvbfiqgv65il9alfao8gmt.apps.googleusercontent.com</string>
+</resources>
