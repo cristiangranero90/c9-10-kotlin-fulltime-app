@@ -46,5 +46,5 @@ Requerimientos funcionales: [Req. Funcionales](https://docs.google.com/document/
 
 ### ***Importante***
 
-El proyecto completo se puede encontrar en: [C9-10-Kotlin-Fulltime - NoCountry]("https://github.com/No-Country/c9-10-kotlin-fulltime")
+El proyecto completo se puede encontrar en: [C9-10-Kotlin-Fulltime - NoCountry](https://github.com/No-Country/c9-10-kotlin-fulltime)
 
