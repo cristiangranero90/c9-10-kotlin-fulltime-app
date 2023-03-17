@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1083688185591",
+    "project_id": "teayuda-cohorte9",
+    "storage_bucket": "teayuda-cohorte9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1083688185591:android:19e68a3a2263b30b392df2",
+        "android_client_info": {
+          "package_name": "com.example.teayudaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1083688185591-ktn50gpruvlvbfiqgv65il9alfao8gmt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-5a-vO0u4pPskTbFbnUj-YAwVmUd7T7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1083688185591-g5tjcritupsnolnldhm7jqckem35e27g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
